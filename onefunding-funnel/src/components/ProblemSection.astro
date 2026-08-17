@@ -1,160 +1,695 @@
 ---
-// ProblemSection.astro - Clean Open-Air Editorial Section (No Excess Cards, No Robot Labels)
+// ProblemSection.astro - Two-Column: Animated Pain Points (Left) + Live Rate Calculator (Right)
 ---
 
 <section class="section section-white problem-section" id="problem">
   <div class="container">
+
+    <!-- Section Header -->
     <div class="section-header-clean">
       <h2>
-        The Costly Reality of Traditional Payment Aggregators
+        Here's What Staying on Flat-Rate Pricing Actually Costs You
       </h2>
       <p>
-        Instant-onboard processors like Stripe and Square are convenient on day one. But as your volume scales past $10K–$100K/month, automated risk rules create severe cash flow bottlenecks.
+        Every month you stay on Stripe or Square, an invisible tax drains your margin. Drag the slider to see exactly how much you're losing — right now.
       </p>
     </div>
 
-    <!-- Open-Air 2-Column Editorial Grid (No Heavy Card Boxes) -->
-    <div class="editorial-grid">
-      <!-- Item 1 -->
-      <div class="editorial-item">
-        <div class="item-icon-wrap rose-icon">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#e11d48" stroke-width="2.2">
-            <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
-            <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
-          </svg>
+    <!-- 2-Column Layout: Problems Left, Calculator Right -->
+    <div class="problem-calculator-grid">
+
+      <!-- LEFT: Animated Pain Points -->
+      <div class="pain-col">
+
+        <!-- Pain Item 1 -->
+        <div class="pain-item" data-animate>
+          <div class="pain-number">01</div>
+          <div class="pain-body">
+            <div class="pain-icon-row">
+              <div class="pain-icon-wrap">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#e11d48" stroke-width="2.2">
+                  <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+                  <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+                </svg>
+              </div>
+              <h3 class="pain-title">Rolling Reserve Holds: 90–180 Days</h3>
+            </div>
+            <p class="pain-desc">
+              A spike in sales triggers automated fraud flags. Your hard-earned revenue gets locked in a holding account — choking inventory reorders and payroll when you need cash most.
+            </p>
+            <div class="pain-stat-pill">
+              <span class="pill-label">Avg. funds locked:</span>
+              <span class="pill-value text-rose">$12,000 – $85,000</span>
+            </div>
+          </div>
         </div>
-        <div class="item-content">
-          <h3 class="item-title">90 to 180-Day Rolling Reserve Holds</h3>
-          <p class="item-desc">
-            A sudden spike in sales or marketing scale triggers automated fraud flags. Your hard-earned revenue gets locked into a holding account, choking inventory reorders and payroll.
-          </p>
+
+        <div class="pain-divider"></div>
+
+        <!-- Pain Item 2 -->
+        <div class="pain-item" data-animate>
+          <div class="pain-number">02</div>
+          <div class="pain-body">
+            <div class="pain-icon-row">
+              <div class="pain-icon-wrap">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#e11d48" stroke-width="2.2">
+                  <line x1="12" y1="1" x2="12" y2="23"></line>
+                  <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
+                </svg>
+              </div>
+              <h3 class="pain-title">$8K–$22K Overpaid Every Year</h3>
+            </div>
+            <p class="pain-desc">
+              A flat 2.9%–3.5% fee looks simple. But aggregators pocket the difference between wholesale interchange (~1.4%) and the flat rate they charge you — silently, every transaction.
+            </p>
+            <div class="pain-stat-pill">
+              <span class="pill-label">At $50K/mo volume, that's:</span>
+              <span class="pill-value text-rose">$8,400 lost annually</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="pain-divider"></div>
+
+        <!-- Pain Item 3 -->
+        <div class="pain-item" data-animate>
+          <div class="pain-number">03</div>
+          <div class="pain-body">
+            <div class="pain-icon-row">
+              <div class="pain-icon-wrap">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#e11d48" stroke-width="2.2">
+                  <circle cx="12" cy="12" r="10"></circle>
+                  <line x1="15" y1="9" x2="9" y2="15"></line>
+                  <line x1="9" y1="9" x2="15" y2="15"></line>
+                </svg>
+              </div>
+              <h3 class="pain-title">Surprise Account Terminations</h3>
+            </div>
+            <p class="pain-desc">
+              Supplements, telehealth, coaching, and subscriptions get re-categorized as "high-risk" without notice — resulting in abrupt shutdowns, bot responses, and zero recourse.
+            </p>
+            <div class="pain-stat-pill">
+              <span class="pill-label">Scaling accounts frozen:</span>
+              <span class="pill-value text-rose">1 in 4 merchants</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="pain-divider"></div>
+
+        <!-- Pain Item 4 -->
+        <div class="pain-item" data-animate>
+          <div class="pain-number">04</div>
+          <div class="pain-body">
+            <div class="pain-icon-row">
+              <div class="pain-icon-wrap">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#e11d48" stroke-width="2.2">
+                  <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline>
+                </svg>
+              </div>
+              <h3 class="pain-title">14-Day Settlement Lags</h3>
+            </div>
+            <p class="pain-desc">
+              Multi-day settlement lags prevent you from reinvesting same-day earnings into ad campaigns, bulk inventory discounts, and immediate business expansion opportunities.
+            </p>
+            <div class="pain-stat-pill">
+              <span class="pill-label">Average payout delay:</span>
+              <span class="pill-value text-rose">14 days</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- RIGHT: Live Rate Calculator Card -->
+      <div class="calc-col">
+        <div class="calc-sticky-wrap">
+          <div class="calc-card" id="rateCalculator">
+
+            <div class="calc-header">
+              <div class="calc-badge">
+                <span class="pulse-dot-green"></span>
+                <span>LIVE SAVINGS CALCULATOR</span>
+              </div>
+              <h3 class="calc-title">How Much Are You Overpaying Right Now?</h3>
+              <p class="calc-desc">Drag the slider to your monthly volume and see the numbers update instantly.</p>
+            </div>
+
+            <!-- Slider -->
+            <div class="calc-slider-section">
+              <div class="volume-readout">
+                <span class="readout-label">Your Monthly Volume</span>
+                <span class="readout-val" id="volumeDisplay">$50,000</span>
+              </div>
+              <div class="slider-track-wrap">
+                <input
+                  type="range"
+                  id="volumeSlider"
+                  min="10000"
+                  max="500000"
+                  step="5000"
+                  value="50000"
+                  class="volume-slider-input"
+                  aria-label="Monthly Processing Volume Slider"
+                />
+                <div class="slider-markers">
+                  <span>$10K</span>
+                  <span>$100K</span>
+                  <span>$250K</span>
+                  <span>$500K+</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Comparison Columns -->
+            <div class="calc-comparison-grid">
+              <div class="calc-box box-traditional">
+                <div class="box-tag text-rose">❌ FLAT RATE (3.5%)</div>
+                <div class="box-num text-rose" id="flatFeeDisplay">$1,750 / mo</div>
+                <div class="box-sub" id="flatAnnualDisplay">$21,000 / year in fees</div>
+              </div>
+              <div class="calc-box box-onefunding">
+                <div class="box-tag text-emerald">✅ ONEFUNDING (Interchange+)</div>
+                <div class="box-num text-emerald" id="onefundingFeeDisplay">$1,050 / mo</div>
+                <div class="box-sub" id="onefundingAnnualDisplay">$12,600 / year in fees</div>
+              </div>
+            </div>
+
+            <!-- Net Savings Strip -->
+            <div class="net-savings-strip">
+              <div class="savings-text-col">
+                <span class="strip-label">YOUR ESTIMATED ANNUAL SAVINGS</span>
+                <span class="strip-amount" id="netSavingsDisplay">$8,400 / year</span>
+                <span class="strip-desc">Plus next-day settlement & multi-gateway uptime protection.</span>
+              </div>
+            </div>
+
+            <!-- CTA -->
+            <a href="#auditForm" class="btn btn-primary btn-full calc-cta-btn">
+              <span>Claim These Rates — Free Audit →</span>
+            </a>
+
+            <div class="calc-trust-row">
+              <span>✓ No obligation</span>
+              <span>✓ 24h report</span>
+              <span>✓ 100% confidential</span>
+            </div>
+
+          </div>
         </div>
       </div>
 
-      <!-- Item 2 -->
-      <div class="editorial-item">
-        <div class="item-icon-wrap rose-icon">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#e11d48" stroke-width="2.2">
-            <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline>
-          </svg>
-        </div>
-        <div class="item-content">
-          <h3 class="item-title">Fragmented Software & Fee Leaks</h3>
-          <p class="item-desc">
-            When your CRM, checkout system, and subscription tools operate in silos, you end up paying layered gateway fees, un-audited chargeback surcharges, and duplicate processing costs.
-          </p>
-        </div>
-      </div>
-
-      <!-- Item 3 -->
-      <div class="editorial-item">
-        <div class="item-icon-wrap rose-icon">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#e11d48" stroke-width="2.2">
-            <circle cx="12" cy="12" r="10"></circle>
-            <line x1="15" y1="9" x2="9" y2="15"></line>
-            <line x1="9" y1="9" x2="15" y2="15"></line>
-          </svg>
-        </div>
-        <div class="item-content">
-          <h3 class="item-title">Unpredictable "High-Risk" Volume Caps</h3>
-          <p class="item-desc">
-            Supplements, telehealth, coaching, and subscription brands are frequently re-categorized as "high-risk" without notice, leading to abrupt account terminations and generic bot responses.
-          </p>
-        </div>
-      </div>
-
-      <!-- Item 4 -->
-      <div class="editorial-item">
-        <div class="item-icon-wrap rose-icon">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#e11d48" stroke-width="2.2">
-            <line x1="12" y1="1" x2="12" y2="23"></line>
-            <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
-          </svg>
-        </div>
-        <div class="item-content">
-          <h3 class="item-title">Zero Access to Flexible Working Capital</h3>
-          <p class="item-desc">
-            Because aggregators treat merchants as generic risk data rather than real business partners, they fail to provide customized advance funding when seasonal or ad scale demand hits.
-          </p>
-        </div>
-      </div>
-    </div>
-
-    <!-- Clean Empathy Divider -->
-    <div class="empathy-clean-box">
-      <p>
-        <em>"If you've experienced delayed payouts, unannounced reserves, or mysterious fee markups — you're not alone. The aggregator model was built to protect their enterprise risk, not your business."</em>
-      </p>
     </div>
   </div>
 </section>
 
 <style>
-  .editorial-grid {
+  /* ===== Two-Column Grid ===== */
+  .problem-calculator-grid {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 3rem 3.5rem;
-    margin-bottom: 3.5rem;
+    grid-template-columns: 1.05fr 0.95fr;
+    gap: 3.5rem;
+    align-items: start;
   }
 
-  .editorial-item {
+  /* ===== LEFT: Pain Items ===== */
+  .pain-col {
     display: flex;
-    align-items: flex-start;
-    gap: 1.25rem;
+    flex-direction: column;
+    gap: 0;
   }
 
-  .item-icon-wrap {
-    width: 44px;
-    height: 44px;
-    border-radius: 10px;
+  .pain-item {
+    display: flex;
+    gap: 1.25rem;
+    align-items: flex-start;
+    padding: 1.75rem 0;
+    opacity: 0;
+    transform: translateX(-24px);
+    transition: opacity 0.55s ease, transform 0.55s ease;
+  }
+
+  .pain-item.is-visible {
+    opacity: 1;
+    transform: translateX(0);
+  }
+
+  .pain-number {
+    font-family: var(--font-display);
+    font-size: 2.8rem;
+    font-weight: 900;
+    line-height: 1;
+    color: #f1f5f9;
+    letter-spacing: -0.04em;
+    flex-shrink: 0;
+    width: 52px;
+    padding-top: 2px;
+    user-select: none;
+  }
+
+  .pain-body {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 0.55rem;
+  }
+
+  .pain-icon-row {
+    display: flex;
+    align-items: center;
+    gap: 0.7rem;
+    margin-bottom: 0.1rem;
+  }
+
+  .pain-icon-wrap {
+    width: 38px;
+    height: 38px;
+    border-radius: 9px;
+    background: var(--rose-bg);
+    border: 1px solid var(--rose-border);
     display: flex;
     align-items: center;
     justify-content: center;
     flex-shrink: 0;
+    transition: background 0.2s ease, border-color 0.2s ease;
   }
 
-  .rose-icon {
+  .pain-item:hover .pain-icon-wrap {
+    background: #ffe4e8;
+    border-color: #fda4af;
+  }
+
+  .pain-title {
+    font-size: 1.1rem;
+    color: var(--text-heading);
+    font-weight: 700;
+    line-height: 1.3;
+  }
+
+  .pain-desc {
+    font-size: 0.93rem;
+    color: var(--text-body);
+    line-height: 1.65;
+  }
+
+  .pain-stat-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.3rem 0.75rem;
+    background: var(--rose-bg);
+    border: 1px solid var(--rose-border);
+    border-radius: var(--radius-full);
+    width: fit-content;
+  }
+
+  .pill-label {
+    font-size: 0.76rem;
+    font-weight: 600;
+    color: var(--text-muted);
+  }
+
+  .pill-value {
+    font-size: 0.78rem;
+    font-weight: 800;
+    letter-spacing: 0.01em;
+  }
+
+  .text-rose {
+    color: var(--rose-primary);
+  }
+
+  .pain-divider {
+    height: 1px;
+    background: var(--border-light);
+    margin: 0;
+  }
+
+  /* Empathy Closer */
+  .empathy-line {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.75rem;
+    margin-top: 2rem;
+    padding: 1.25rem 1.5rem;
+    background: var(--bg-subtle);
+    border-left: 3px solid var(--border-subtle);
+    border-radius: 0 var(--radius-md) var(--radius-md) 0;
+    opacity: 0;
+    transform: translateY(16px);
+    transition: opacity 0.5s ease 0.2s, transform 0.5s ease 0.2s;
+  }
+
+  .empathy-line.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .empathy-line svg {
+    flex-shrink: 0;
+    margin-top: 3px;
+    color: var(--text-muted);
+  }
+
+  .empathy-line p {
+    font-size: 0.91rem;
+    color: var(--text-muted);
+    line-height: 1.65;
+    font-style: italic;
+  }
+
+  /* ===== RIGHT: Calculator Card ===== */
+  .calc-col {
+    position: relative;
+  }
+
+  .calc-sticky-wrap {
+    position: sticky;
+    top: 100px;
+  }
+
+  .calc-card {
+    background: #ffffff;
+    border: 1px solid var(--border-light);
+    border-radius: var(--radius-xl);
+    padding: 2rem;
+    box-shadow: var(--shadow-lg);
+    display: flex;
+    flex-direction: column;
+    gap: 1.35rem;
+  }
+
+  .calc-header {
+    display: flex;
+    flex-direction: column;
+    gap: 0.45rem;
+  }
+
+  .calc-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.45rem;
+    padding: 0.3rem 0.8rem;
+    background: var(--emerald-bg);
+    border: 1px solid var(--emerald-border);
+    border-radius: var(--radius-full);
+    color: var(--emerald-primary);
+    font-size: 0.74rem;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    width: fit-content;
+  }
+
+  .calc-title {
+    font-size: 1.2rem;
+    color: var(--text-heading);
+    font-weight: 700;
+    line-height: 1.3;
+  }
+
+  .calc-desc {
+    font-size: 0.88rem;
+    color: var(--text-muted);
+    line-height: 1.55;
+  }
+
+  /* Slider */
+  .volume-readout {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.75rem 1rem;
+    background: var(--bg-subtle);
+    border: 1px solid var(--border-light);
+    border-radius: var(--radius-md);
+    margin-bottom: 1rem;
+  }
+
+  .readout-label {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--text-muted);
+  }
+
+  .readout-val {
+    font-family: var(--font-display);
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: var(--text-heading);
+    transition: color 0.2s ease;
+  }
+
+  .slider-track-wrap {
+    padding: 0 0.15rem;
+  }
+
+  .volume-slider-input {
+    -webkit-appearance: none;
+    width: 100%;
+    height: 8px;
+    border-radius: 4px;
+    background: linear-gradient(to right, var(--emerald-primary) 10%, #e2e8f0 10%);
+    outline: none;
+    cursor: pointer;
+    transition: background 0.1s ease;
+  }
+
+  .volume-slider-input::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    background: var(--emerald-primary);
+    cursor: pointer;
+    box-shadow: 0 2px 8px rgba(5, 150, 105, 0.45);
+    border: 2px solid #ffffff;
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+  }
+
+  .volume-slider-input::-webkit-slider-thumb:hover,
+  .volume-slider-input:active::-webkit-slider-thumb {
+    transform: scale(1.2);
+    box-shadow: 0 4px 14px rgba(5, 150, 105, 0.55);
+  }
+
+  .slider-markers {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.72rem;
+    font-weight: 600;
+    color: var(--text-muted);
+    margin-top: 0.55rem;
+  }
+
+  /* Comparison Grid */
+  .calc-comparison-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.85rem;
+  }
+
+  .calc-box {
+    padding: 1rem 1.15rem;
+    border-radius: var(--radius-md);
+    transition: transform 0.2s ease;
+  }
+
+  .calc-box:hover {
+    transform: translateY(-2px);
+  }
+
+  .box-traditional {
     background: var(--rose-bg);
     border: 1px solid var(--rose-border);
   }
 
-  .item-content {
+  .box-onefunding {
+    background: var(--emerald-bg);
+    border: 1px solid var(--emerald-border);
+  }
+
+  .box-tag {
+    font-size: 0.68rem;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    margin-bottom: 0.3rem;
+    line-height: 1.3;
+  }
+
+  .text-emerald {
+    color: var(--emerald-primary);
+  }
+
+  .box-num {
+    font-family: var(--font-display);
+    font-size: 1.45rem;
+    font-weight: 800;
+    line-height: 1.15;
+    transition: all 0.3s ease;
+  }
+
+  .box-sub {
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    margin-top: 0.2rem;
+  }
+
+  /* Net Savings Strip */
+  .net-savings-strip {
+    background: var(--bg-dark);
+    border-radius: var(--radius-lg);
+    padding: 1.25rem 1.5rem;
+    color: #ffffff;
+  }
+
+  .savings-text-col {
     display: flex;
     flex-direction: column;
-    gap: 0.35rem;
+    gap: 0.1rem;
   }
 
-  .item-title {
-    font-size: 1.22rem;
-    color: var(--text-heading);
+  .strip-label {
+    font-size: 0.68rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    color: var(--emerald-light);
   }
 
-  .item-desc {
-    font-size: 0.95rem;
-    color: var(--text-body);
-    line-height: 1.6;
+  .strip-amount {
+    font-family: var(--font-display);
+    font-size: 1.95rem;
+    font-weight: 800;
+    color: #ffffff;
+    line-height: 1.15;
+    transition: all 0.35s ease;
   }
 
-  .empathy-clean-box {
-    max-width: 780px;
-    margin: 0 auto;
+  .strip-desc {
+    font-size: 0.78rem;
+    color: #94a3b8;
+    margin-top: 0.1rem;
+  }
+
+  /* CTA */
+  .calc-cta-btn {
+    font-size: 0.97rem;
+    padding: 0.95rem 1.25rem;
+    letter-spacing: 0.01em;
     text-align: center;
-    padding: 1.25rem 1.75rem;
-    background: var(--bg-subtle);
-    border: 1px solid var(--border-light);
-    border-radius: var(--radius-md);
   }
 
-  .empathy-clean-box p {
-    font-size: 0.98rem;
-    color: var(--text-body);
-    line-height: 1.6;
+  .calc-trust-row {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    font-size: 0.76rem;
+    font-weight: 600;
+    color: var(--text-muted);
   }
 
-  @media (max-width: 768px) {
-    .editorial-grid {
+  /* ===== RESPONSIVE ===== */
+  @media (max-width: 1024px) {
+    .problem-calculator-grid {
       grid-template-columns: 1fr;
-      gap: 2rem;
+      gap: 2.5rem;
+    }
+
+    .calc-sticky-wrap {
+      position: static;
+    }
+  }
+
+  @media (max-width: 600px) {
+    .calc-comparison-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .pain-number {
+      font-size: 2rem;
+      width: 38px;
     }
   }
 </style>
+
+<script>
+  // ===== Pain Item Scroll Animations =====
+  function initPainAnimations() {
+    const items = document.querySelectorAll('[data-animate]');
+    if (!items.length) return;
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry, i) => {
+          if (entry.isIntersecting) {
+            // Stagger each item by 120ms
+            const index = Array.from(items).indexOf(entry.target);
+            setTimeout(() => {
+              entry.target.classList.add('is-visible');
+            }, index * 120);
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.15 }
+    );
+
+    items.forEach((item) => observer.observe(item));
+  }
+
+  // ===== Live Rate Calculator =====
+  function initCalculator() {
+    const slider = document.getElementById('volumeSlider') as HTMLInputElement;
+    const volDisplay = document.getElementById('volumeDisplay');
+    const flatFeeDisplay = document.getElementById('flatFeeDisplay');
+    const flatAnnualDisplay = document.getElementById('flatAnnualDisplay');
+    const onefundingFeeDisplay = document.getElementById('onefundingFeeDisplay');
+    const onefundingAnnualDisplay = document.getElementById('onefundingAnnualDisplay');
+    const netSavingsDisplay = document.getElementById('netSavingsDisplay');
+
+    if (!slider || !volDisplay) return;
+
+    function updateSliderGradient(val: number, min: number, max: number) {
+      const pct = ((val - min) / (max - min)) * 100;
+      slider.style.background = `linear-gradient(to right, var(--emerald-primary) ${pct}%, #e2e8f0 ${pct}%)`;
+    }
+
+    function update() {
+      const volume = parseFloat(slider.value);
+      volDisplay!.textContent = '$' + volume.toLocaleString('en-US');
+      updateSliderGradient(volume, 10000, 500000);
+
+      // Traditional 3.5% effective rate
+      const flatMonthly = volume * 0.035;
+      const flatAnnual = flatMonthly * 12;
+
+      // OneFunding Interchange-Plus estimated effective ~2.1%
+      const onefundingMonthly = volume * 0.021;
+      const onefundingAnnual = onefundingMonthly * 12;
+
+      const netAnnualSavings = flatAnnual - onefundingAnnual;
+
+      flatFeeDisplay!.textContent = '$' + Math.round(flatMonthly).toLocaleString('en-US') + ' / mo';
+      flatAnnualDisplay!.textContent = '$' + Math.round(flatAnnual).toLocaleString('en-US') + ' / year in fees';
+
+      onefundingFeeDisplay!.textContent = '$' + Math.round(onefundingMonthly).toLocaleString('en-US') + ' / mo';
+      onefundingAnnualDisplay!.textContent = '$' + Math.round(onefundingAnnual).toLocaleString('en-US') + ' / year in fees';
+
+      netSavingsDisplay!.textContent = '$' + Math.round(netAnnualSavings).toLocaleString('en-US') + ' / year';
+    }
+
+    slider.addEventListener('input', update);
+    update();
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', () => {
+      initPainAnimations();
+      initCalculator();
+    });
+  } else {
+    initPainAnimations();
+    initCalculator();
+  }
+</script>
