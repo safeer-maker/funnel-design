@@ -1,0 +1,213 @@
+---
+// SolutionSection.astro - Clean Light-Theme Solution Architecture & Differentiators
+import InteractiveRateCalculator from './InteractiveRateCalculator.astro';
+---
+
+<section class="section section-white solution-section" id="solution">
+  <div class="container">
+    <div class="section-header-clean">
+      <h2>
+        Payment Infrastructure Built to Protect Your Cash Flow
+      </h2>
+      <p>
+        Most processors treat your business like an automated risk equation. OneFunding acts as an infrastructure partner, custom-underwriting your account upfront so your revenue stays secure.
+      </p>
+    </div>
+
+    <!-- 3 Core Differentiator Columns (Clean Layout) -->
+    <div class="solution-pillars-grid">
+      <!-- Pillar 1 -->
+      <div class="pillar-col">
+        <div class="pillar-icon emerald-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#059669" stroke-width="2.2">
+            <line x1="12" y1="1" x2="12" y2="23"></line>
+            <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
+          </svg>
+        </div>
+        <h3 class="pillar-title">Interchange-Plus Pricing</h3>
+        <p class="pillar-desc">
+          Pay true wholesale card network costs plus a slim, transparent margin. Eliminate arbitrary rate tiers and save 20% to 40% immediately over aggregator pricing.
+        </p>
+        <ul class="pillar-list">
+          <li>✓ True wholesale cost transparency</li>
+          <li>✓ Zero hidden cancellation fees</li>
+          <li>✓ Next business day cash deposits</li>
+        </ul>
+      </div>
+
+      <!-- Pillar 2 -->
+      <div class="pillar-col">
+        <div class="pillar-icon indigo-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#4f46e5" stroke-width="2.2">
+            <rect x="2" y="2" width="20" height="8" rx="2" ry="2"></rect>
+            <rect x="2" y="14" width="20" height="8" rx="2" ry="2"></rect>
+            <line x1="6" y1="6" x2="6.01" y2="6"></line>
+            <line x1="6" y1="18" x2="6.01" y2="18"></line>
+          </svg>
+        </div>
+        <h3 class="pillar-title">Multi-Gateway Failover</h3>
+        <p class="pillar-desc">
+          Eliminate single points of failure. Our intelligent orchestration automatically routes transactions between NMI, Authorize.Net, and Fluidpay in milliseconds.
+        </p>
+        <ul class="pillar-list">
+          <li>✓ 99.9% guaranteed uptime SLA</li>
+          <li>✓ Smart load-balancing for peak sales</li>
+          <li>✓ Automated secondary bank retries</li>
+        </ul>
+      </div>
+
+      <!-- Pillar 3 -->
+      <div class="pillar-col">
+        <div class="pillar-icon cyan-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#0284c7" stroke-width="2.2">
+            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+            <polyline points="9 12 11 14 15 10"></polyline>
+          </svg>
+        </div>
+        <h3 class="pillar-title">LegitScript & High-Risk Underwriting</h3>
+        <p class="pillar-desc">
+          Scale nutraceuticals, telehealth, coaching, and subscriptions with confidence. We verify your business model before going live to eliminate surprise account freezes.
+        </p>
+        <ul class="pillar-list">
+          <li>✓ LegitScript certified compliance</li>
+          <li>✓ Chargeback defense & early alerts</li>
+          <li>✓ Dedicated 24/7 account manager</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Multi-Gateway Orchestration Diagram -->
+    <div class="gateway-diagram-section">
+      <div class="diagram-text-center text-center">
+        <h3>Intelligent Multi-Gateway Redundancy Flow</h3>
+        <p>How OneFunding protects your store from acquiring bank downtime</p>
+      </div>
+      <div class="diagram-image-container">
+        <img 
+          src="/images/gateway_routing.jpg" 
+          alt="OneFunding Multi-Gateway Payment Orchestration and Automated Failover Architecture" 
+          class="diagram-image"
+          loading="lazy"
+          width="960"
+          height="540"
+        />
+      </div>
+    </div>
+
+    <!-- Embedded Calculator -->
+    <InteractiveRateCalculator />
+  </div>
+</section>
+
+<style>
+  .solution-pillars-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 3rem;
+    margin-bottom: 4rem;
+  }
+
+  .pillar-col {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .pillar-icon {
+    width: 46px;
+    height: 46px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1.15rem;
+  }
+
+  .emerald-icon {
+    background: var(--emerald-bg);
+    border: 1px solid var(--emerald-border);
+  }
+
+  .indigo-icon {
+    background: var(--indigo-bg);
+    border: 1px solid var(--indigo-border);
+  }
+
+  .cyan-icon {
+    background: var(--cyan-bg);
+    border: 1px solid var(--cyan-border);
+  }
+
+  .pillar-title {
+    font-size: 1.25rem;
+    color: var(--text-heading);
+    margin-bottom: 0.5rem;
+  }
+
+  .pillar-desc {
+    font-size: 0.94rem;
+    line-height: 1.6;
+    color: var(--text-body);
+    margin-bottom: 1.15rem;
+  }
+
+  .pillar-list {
+    list-style: none;
+    padding: 0;
+    margin-top: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+  }
+
+  .pillar-list li {
+    font-size: 0.86rem;
+    font-weight: 600;
+    color: var(--text-body);
+  }
+
+  /* Gateway Diagram Section */
+  .gateway-diagram-section {
+    background: var(--bg-subtle);
+    border: 1px solid var(--border-light);
+    border-radius: var(--radius-xl);
+    padding: 2.25rem;
+    box-shadow: var(--shadow-sm);
+    margin-bottom: 2rem;
+  }
+
+  .diagram-text-center {
+    margin-bottom: 1.5rem;
+  }
+
+  .diagram-text-center h3 {
+    font-size: 1.35rem;
+    color: var(--text-heading);
+    margin-bottom: 0.25rem;
+  }
+
+  .diagram-text-center p {
+    font-size: 0.92rem;
+    color: var(--text-muted);
+  }
+
+  .diagram-image-container {
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    border: 1px solid var(--border-light);
+    background: #ffffff;
+  }
+
+  .diagram-image {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+
+  @media (max-width: 900px) {
+    .solution-pillars-grid {
+      grid-template-columns: 1fr;
+      gap: 2rem;
+    }
+  }
+</style>

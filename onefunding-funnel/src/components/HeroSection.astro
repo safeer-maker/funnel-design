@@ -1,0 +1,224 @@
+---
+// HeroSection.astro - Clean Light Hero Section (5-Second Rule Compliant)
+---
+
+<section class="section section-white hero-section" id="hero">
+  <div class="container">
+    <div class="hero-grid">
+      <!-- Left Column: Copy & Conversion Hierarchy -->
+      <div class="hero-content">
+        <!-- Headline: Human Scale, Punchy & Clear -->
+        <h2 class="hero-title">
+          Stop Funding Stripe's Growth. <br />
+          <span class="text-blue">Keep More of Every Dollar</span> <span class="text-gold">Your Business Earns.</span>
+        </h2>
+
+        <!-- Subheadline -->
+        <p class="hero-subtitle">
+          OneFunding gives high-growth businesses <strong>Interchange-Plus wholesale rates</strong>, <strong>next-day cash deposits</strong>, and multi-gateway underwriting that <strong>never gets shut down</strong> — no matter your industry.
+        </p>
+
+
+
+        <!-- Primary CTA & FUD Reduction -->
+        <div class="hero-cta-block">
+          <a href="#auditForm" class="btn btn-primary btn-lg hero-cta-btn">
+            <span>GET MY FREE RATE ANALYSIS →</span>
+          </a>
+
+          <div class="fud-list">
+            <div class="fud-item">
+              <span class="fud-check">✓</span> No long-term contracts
+            </div>
+            <div class="fud-item">
+              <span class="fud-check">✓</span> Zero setup fees
+            </div>
+            <div class="fud-item">
+              <span class="fud-check">✓</span> 24–48h approvals
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right Column: Clean Dashboard Visual -->
+      <div class="hero-visual">
+        <div class="overlapping-images">
+          <img src="/images/contactless_payment.jpg" alt="Contactless Payment" class="overlap-img img-1" loading="eager" />
+          <img src="/images/man_paying.jpg" alt="Man Paying" class="overlap-img img-2" loading="eager" />
+          <img src="/images/sucess_hero image.jpg" alt="Success Hero" class="overlap-img img-3" loading="eager" />
+        </div>
+        
+        <!-- Social Proof Form 1: Verified Rating -->
+        <div class="hero-social-proof-clean">
+          <div class="rating-stars" aria-label="5 out of 5 stars">
+            ★★★★★
+          </div>
+          <span class="proof-text">
+            <strong>4.9/5 Rating</strong> · Trusted by <strong>2,000+ scaling merchants</strong>
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .hero-section {
+    padding-top: 3.25rem;
+    padding-bottom: 3.75rem;
+  }
+
+  .hero-grid {
+    display: grid;
+    grid-template-columns: 1.15fr 0.95fr;
+    gap: 3rem;
+    align-items: center;
+  }
+
+  .hero-badge {
+    margin-bottom: 1.1rem;
+  }
+
+  .hero-title {
+    margin-bottom: 1.1rem;
+  }
+
+  .text-emerald {
+    color: var(--emerald-primary);
+  }
+
+  .text-blue {
+    color: #1d4ed8;
+  }
+
+  .text-gold {
+    color: #d97706;
+  }
+
+  .hero-subtitle {
+    font-size: 1.08rem;
+    line-height: 1.65;
+    margin-bottom: 1.5rem;
+    color: var(--text-body);
+    max-width: 540px;
+  }
+
+  .hero-social-proof-clean {
+    display: flex;
+    align-items: center;
+    gap: 0.65rem;
+    margin-top: 1rem;
+    justify-content: flex-start;
+  }
+
+  .rating-stars {
+    color: #f59e0b;
+    font-size: 1rem;
+    letter-spacing: 0.05em;
+  }
+
+  .proof-text {
+    font-size: 0.86rem;
+    color: var(--text-body);
+  }
+
+  .proof-text strong {
+    color: var(--text-heading);
+  }
+
+  .hero-cta-block {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: fit-content;
+    margin-top: 1.5rem;
+  }
+
+  .hero-cta-btn {
+    letter-spacing: 0.02em;
+  }
+
+  .hero-cta-block .fud-list {
+    justify-content: flex-start;
+    margin-top: 0.75rem;
+  }
+
+  /* Right Visual */
+  .hero-visual {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .overlapping-images {
+    position: relative;
+    width: 100%;
+    height: 400px;
+    margin-bottom: 0.5rem;
+  }
+
+  .overlap-img {
+    position: absolute;
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-lg);
+    border: 4px solid white;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+  }
+
+  .overlap-img:hover {
+    transform: scale(1.05);
+    z-index: 10;
+  }
+
+  .img-1 {
+    width: 55%;
+    height: 240px;
+    top: 0;
+    left: 0;
+    z-index: 3;
+  }
+
+  .img-2 {
+    width: 50%;
+    height: 220px;
+    top: 40px;
+    right: 0;
+    z-index: 2;
+  }
+
+  .img-3 {
+    width: 60%;
+    height: 220px;
+    bottom: 0;
+    left: 15%;
+    z-index: 4;
+  }
+
+  @media (max-width: 992px) {
+    .hero-grid {
+      grid-template-columns: 1fr;
+      gap: 2.25rem;
+    }
+
+    .hero-content {
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .hero-subtitle {
+      max-width: 100%;
+    }
+
+    .hero-cta-block {
+      align-items: center;
+      width: 100%;
+    }
+
+    .hero-cta-block .fud-list {
+      justify-content: center;
+    }
+  }
+</style>

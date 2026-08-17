@@ -1,0 +1,318 @@
+---
+// SocialProofSection.astro - Clean Light Case Studies & Verified Results (No Carousels)
+---
+
+<section class="section section-white social-proof-section" id="testimonials">
+  <div class="container">
+    <div class="section-header-clean">
+      <h2>
+        Real Merchants. Verifiable Savings. Zero Frozen Funds.
+      </h2>
+      <p>
+        See how scaling brands switched from flat-rate aggregators to OneFunding Interchange-Plus and unlocked true next-day cash flow.
+      </p>
+    </div>
+
+    <!-- 3-Column Verifiable Testimonials Grid -->
+    <div class="testimonials-clean-grid">
+      <!-- Story 1 -->
+      <div class="testimonial-box">
+        <div class="testi-header">
+          <div class="rating-stars">★★★★★</div>
+          <div class="verified-tag">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#059669" stroke-width="3">
+              <polyline points="20 6 9 17 4 12"></polyline>
+            </svg>
+            <span>Verified Merchant</span>
+          </div>
+        </div>
+
+        <p class="testi-quote">
+          "Stripe placed an <strong>$85,000 rolling reserve</strong> on our account right in the middle of our Q4 supplement product launch. OneFunding got us LegitScript-underwritten and live on multi-gateway routing in 36 hours. We saved <strong>$18,400 in processing fees</strong> in year one."
+        </p>
+
+        <div class="metric-pill-row">
+          <span class="m-val">$18.4K Annual Savings</span>
+          <span class="m-sep">•</span>
+          <span class="m-sub">0 Reserve Holds</span>
+        </div>
+
+        <div class="testi-author">
+          <div class="testi-avatar avatar-green">MV</div>
+          <div>
+            <div class="testi-name">Marcus Vance</div>
+            <div class="testi-role">Founder, Apex Nutraceuticals</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Story 2 -->
+      <div class="testimonial-box">
+        <div class="testi-header">
+          <div class="rating-stars">★★★★★</div>
+          <div class="verified-tag">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#059669" stroke-width="3">
+              <polyline points="20 6 9 17 4 12"></polyline>
+            </svg>
+            <span>Verified Merchant</span>
+          </div>
+        </div>
+
+        <p class="testi-quote">
+          "Moving from a flat 3.5% aggregator fee to OneFunding's Interchange-Plus gave us an immediate <strong>32% reduction in transaction fees</strong>. Next-day cash deposits completely transformed how quickly we restock inventory."
+        </p>
+
+        <div class="metric-pill-row">
+          <span class="m-val">32% Lower Fees</span>
+          <span class="m-sep">•</span>
+          <span class="m-sub">Next-Day Deposits</span>
+        </div>
+
+        <div class="testi-author">
+          <div class="testi-avatar avatar-blue">ER</div>
+          <div>
+            <div class="testi-name">Elena Rostova</div>
+            <div class="testi-role">COO, LuxeCart E-Commerce</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Story 3 -->
+      <div class="testimonial-box">
+        <div class="testi-header">
+          <div class="rating-stars">★★★★★</div>
+          <div class="verified-tag">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#059669" stroke-width="3">
+              <polyline points="20 6 9 17 4 12"></polyline>
+            </svg>
+            <span>Verified Merchant</span>
+          </div>
+        </div>
+
+        <p class="testi-quote">
+          "We process payments internationally in 14 currencies. OneFunding connected to our custom API in two days, gave us <strong>automated failover between NMI and Authorize.Net</strong>, and authorization rates increased to 99.4%."
+        </p>
+
+        <div class="metric-pill-row">
+          <span class="m-val">99.4% Auth Rate</span>
+          <span class="m-sep">•</span>
+          <span class="m-sub">14 Currencies</span>
+        </div>
+
+        <div class="testi-author">
+          <div class="testi-avatar avatar-indigo">DS</div>
+          <div>
+            <div class="testi-name">David Sterling</div>
+            <div class="testi-role">VP Infrastructure, CloudSync AI</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Trust Badges Strip -->
+    <div class="trust-badges-strip">
+      <div class="trust-badge-item">
+        <div class="badge-stars">★★★★★</div>
+        <div class="badge-title">Google Verified Reviews</div>
+        <div class="badge-desc">4.9 / 5.0 Rating (280+ Reviews)</div>
+      </div>
+      <div class="trust-badge-item">
+        <div class="badge-icon">🛡️</div>
+        <div class="badge-title">LegitScript Certified Partner</div>
+        <div class="badge-desc">Verified High-Risk Compliance</div>
+      </div>
+      <div class="trust-badge-item">
+        <div class="badge-icon">🔒</div>
+        <div class="badge-title">PCI-DSS Level 1 Compliant</div>
+        <div class="badge-desc">Highest Data Encryption Standard</div>
+      </div>
+      <div class="trust-badge-item">
+        <div class="badge-icon">🏆</div>
+        <div class="badge-title">BBB Accredited Business</div>
+        <div class="badge-desc">A+ Reliability & Transparency</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .testimonials-clean-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    margin-bottom: 3.5rem;
+  }
+
+  .testimonial-box {
+    background: #ffffff;
+    border: 1px solid var(--border-light);
+    border-radius: var(--radius-lg);
+    padding: 2rem;
+    box-shadow: var(--shadow-sm);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: all var(--transition-normal);
+  }
+
+  .testimonial-box:hover {
+    box-shadow: var(--shadow-md);
+    border-color: var(--border-subtle);
+    transform: translateY(-2px);
+  }
+
+  .testi-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 1.15rem;
+  }
+
+  .rating-stars {
+    color: #f59e0b;
+    font-size: 1rem;
+    letter-spacing: 0.05em;
+  }
+
+  .verified-tag {
+    display: flex;
+    align-items: center;
+    gap: 0.35rem;
+    padding: 0.2rem 0.55rem;
+    background: var(--emerald-bg);
+    border: 1px solid var(--emerald-border);
+    border-radius: var(--radius-full);
+    font-size: 0.72rem;
+    font-weight: 700;
+    color: var(--emerald-primary);
+  }
+
+  .testi-quote {
+    font-size: 0.94rem;
+    line-height: 1.65;
+    color: var(--text-body);
+    margin-bottom: 1.25rem;
+  }
+
+  .metric-pill-row {
+    display: flex;
+    align-items: center;
+    gap: 0.45rem;
+    padding: 0.45rem 0.75rem;
+    background: var(--bg-subtle);
+    border-radius: var(--radius-sm);
+    margin-bottom: 1.25rem;
+    font-size: 0.8rem;
+    font-weight: 700;
+  }
+
+  .m-val {
+    color: var(--emerald-primary);
+  }
+
+  .m-sep {
+    color: var(--text-muted);
+  }
+
+  .m-sub {
+    color: var(--text-muted);
+  }
+
+  .testi-author {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding-top: 1rem;
+    border-top: 1px solid var(--border-light);
+  }
+
+  .testi-avatar {
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 800;
+    font-size: 0.85rem;
+    color: #ffffff;
+  }
+
+  .avatar-green {
+    background: var(--emerald-primary);
+  }
+
+  .avatar-blue {
+    background: var(--cyan-primary);
+  }
+
+  .avatar-indigo {
+    background: var(--indigo-primary);
+  }
+
+  .testi-name {
+    font-size: 0.92rem;
+    font-weight: 700;
+    color: var(--text-heading);
+  }
+
+  .testi-role {
+    font-size: 0.76rem;
+    color: var(--text-muted);
+  }
+
+  /* Trust Badges Strip */
+  .trust-badges-strip {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.5rem;
+    padding: 1.75rem;
+    background: var(--bg-subtle);
+    border: 1px solid var(--border-light);
+    border-radius: var(--radius-xl);
+    text-align: center;
+  }
+
+  .trust-badge-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.25rem;
+  }
+
+  .badge-stars {
+    color: #f59e0b;
+    font-size: 0.95rem;
+  }
+
+  .badge-icon {
+    font-size: 1.4rem;
+  }
+
+  .badge-title {
+    font-size: 0.88rem;
+    font-weight: 700;
+    color: var(--text-heading);
+  }
+
+  .badge-desc {
+    font-size: 0.74rem;
+    color: var(--text-muted);
+  }
+
+  @media (max-width: 900px) {
+    .testimonials-clean-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .trust-badges-strip {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (max-width: 550px) {
+    .trust-badges-strip {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

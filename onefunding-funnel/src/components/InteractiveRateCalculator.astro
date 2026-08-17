@@ -1,0 +1,314 @@
+---
+// InteractiveRateCalculator.astro - Clean Light-Theme Savings Estimator Widget
+---
+
+<div class="calculator-clean-card" id="rateCalculator">
+  <div class="calc-top text-center">
+    <h3 class="calc-main-title">Calculate Your Estimated Annual Processing Savings</h3>
+    <p class="calc-main-desc">Slide to your average monthly card processing volume:</p>
+  </div>
+
+  <div class="calc-slider-section">
+    <div class="volume-readout">
+      <span class="readout-label">Monthly Volume:</span>
+      <span class="readout-val" id="volumeDisplay">$50,000</span>
+    </div>
+
+    <div class="slider-track-wrap">
+      <input 
+        type="range" 
+        id="volumeSlider" 
+        min="10000" 
+        max="500000" 
+        step="5000" 
+        value="50000" 
+        class="volume-slider-input"
+        aria-label="Monthly Processing Volume Slider"
+      />
+      <div class="slider-markers">
+        <span>$10K/mo</span>
+        <span>$100K/mo</span>
+        <span>$250K/mo</span>
+        <span>$500K+/mo</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Comparison Columns -->
+  <div class="calc-comparison-grid">
+    <div class="calc-box box-traditional">
+      <div class="box-tag text-rose">TRADITIONAL FLAT RATE (3.5% + $0.30)</div>
+      <div class="box-num text-rose" id="flatFeeDisplay">$1,750 / mo</div>
+      <div class="box-sub" id="flatAnnualDisplay">$21,000 / year in processing fees</div>
+    </div>
+
+    <div class="calc-box box-onefunding">
+      <div class="box-tag text-emerald">ONEFUNDING INTERCHANGE-PLUS</div>
+      <div class="box-num text-emerald" id="onefundingFeeDisplay">$1,050 / mo</div>
+      <div class="box-sub" id="onefundingAnnualDisplay">$12,600 / year in processing fees</div>
+    </div>
+  </div>
+
+  <!-- Net Savings Callout Strip -->
+  <div class="net-savings-strip">
+    <div class="savings-text-col">
+      <span class="strip-label">ESTIMATED NET ANNUAL SAVINGS:</span>
+      <span class="strip-amount" id="netSavingsDisplay">$8,400.00 / year</span>
+      <span class="strip-desc">Plus next-day settlement and multi-gateway uptime protection.</span>
+    </div>
+    <a href="#auditForm" class="btn btn-primary calc-cta-btn">
+      <span>Claim These Rates →</span>
+    </a>
+  </div>
+</div>
+
+<style>
+  .calculator-clean-card {
+    background: #ffffff;
+    border: 1px solid var(--border-light);
+    border-radius: var(--radius-xl);
+    padding: 2.5rem;
+    box-shadow: var(--shadow-md);
+    margin: 3.5rem 0 1.5rem 0;
+  }
+
+  .calc-top {
+    margin-bottom: 2rem;
+  }
+
+  .calc-main-title {
+    font-size: 1.55rem;
+    color: var(--text-heading);
+    margin-top: 0.6rem;
+    margin-bottom: 0.25rem;
+  }
+
+  .calc-main-desc {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+  }
+
+  .calc-slider-section {
+    max-width: 620px;
+    margin: 0 auto 2.25rem auto;
+  }
+
+  .volume-readout {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.85rem 1.25rem;
+    background: var(--bg-subtle);
+    border: 1px solid var(--border-light);
+    border-radius: var(--radius-md);
+    margin-bottom: 1.25rem;
+  }
+
+  .readout-label {
+    font-weight: 600;
+    color: var(--text-body);
+    font-size: 1rem;
+  }
+
+  .readout-val {
+    font-family: var(--font-display);
+    font-size: 1.6rem;
+    font-weight: 800;
+    color: var(--text-heading);
+  }
+
+  .slider-track-wrap {
+    padding: 0 0.25rem;
+  }
+
+  .volume-slider-input {
+    -webkit-appearance: none;
+    width: 100%;
+    height: 8px;
+    border-radius: 4px;
+    background: #e2e8f0;
+    outline: none;
+    cursor: pointer;
+  }
+
+  .volume-slider-input::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background: var(--emerald-primary);
+    cursor: pointer;
+    box-shadow: 0 2px 6px rgba(5, 150, 105, 0.4);
+    border: 2px solid #ffffff;
+    transition: transform 0.15s ease;
+  }
+
+  .volume-slider-input::-webkit-slider-thumb:hover {
+    transform: scale(1.15);
+  }
+
+  .slider-markers {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.78rem;
+    font-weight: 600;
+    color: var(--text-muted);
+    margin-top: 0.6rem;
+  }
+
+  .calc-comparison-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.25rem;
+    margin-bottom: 1.75rem;
+  }
+
+  .calc-box {
+    padding: 1.35rem 1.5rem;
+    border-radius: var(--radius-md);
+  }
+
+  .box-traditional {
+    background: var(--rose-bg);
+    border: 1px solid var(--rose-border);
+  }
+
+  .box-onefunding {
+    background: var(--emerald-bg);
+    border: 1px solid var(--emerald-border);
+  }
+
+  .box-tag {
+    font-size: 0.74rem;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    margin-bottom: 0.35rem;
+  }
+
+  .text-rose {
+    color: var(--rose-primary);
+  }
+
+  .text-emerald {
+    color: var(--emerald-primary);
+  }
+
+  .box-num {
+    font-family: var(--font-display);
+    font-size: 1.7rem;
+    font-weight: 800;
+    line-height: 1.1;
+  }
+
+  .box-sub {
+    font-size: 0.82rem;
+    color: var(--text-muted);
+    margin-top: 0.25rem;
+  }
+
+  /* Net Savings Strip */
+  .net-savings-strip {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: var(--bg-dark);
+    border-radius: var(--radius-lg);
+    padding: 1.5rem 1.75rem;
+    color: #ffffff;
+    gap: 1.25rem;
+  }
+
+  .savings-text-col {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .strip-label {
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    color: var(--emerald-light);
+  }
+
+  .strip-amount {
+    font-family: var(--font-display);
+    font-size: 1.85rem;
+    font-weight: 800;
+    color: #ffffff;
+    line-height: 1.15;
+  }
+
+  .strip-desc {
+    font-size: 0.82rem;
+    color: #94a3b8;
+    margin-top: 0.15rem;
+  }
+
+  .calc-cta-btn {
+    white-space: nowrap;
+    padding: 0.75rem 1.4rem;
+    font-size: 0.95rem;
+  }
+
+  @media (max-width: 768px) {
+    .calc-comparison-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .net-savings-strip {
+      flex-direction: column;
+      text-align: center;
+    }
+
+    .calc-cta-btn {
+      width: 100%;
+    }
+  }
+</style>
+
+<script>
+  function initCalculator() {
+    const slider = document.getElementById('volumeSlider') as HTMLInputElement;
+    const volDisplay = document.getElementById('volumeDisplay');
+    const flatFeeDisplay = document.getElementById('flatFeeDisplay');
+    const flatAnnualDisplay = document.getElementById('flatAnnualDisplay');
+    const onefundingFeeDisplay = document.getElementById('onefundingFeeDisplay');
+    const onefundingAnnualDisplay = document.getElementById('onefundingAnnualDisplay');
+    const netSavingsDisplay = document.getElementById('netSavingsDisplay');
+
+    if (!slider || !volDisplay) return;
+
+    function update() {
+      const volume = parseFloat(slider.value);
+      volDisplay.textContent = '$' + volume.toLocaleString('en-US');
+
+      // Traditional 3.5% effective rate
+      const flatMonthly = volume * 0.035;
+      const flatAnnual = flatMonthly * 12;
+
+      // OneFunding Interchange-Plus estimated effective ~2.1%
+      const onefundingMonthly = volume * 0.021;
+      const onefundingAnnual = onefundingMonthly * 12;
+
+      const netAnnualSavings = flatAnnual - onefundingAnnual;
+
+      flatFeeDisplay.textContent = '$' + Math.round(flatMonthly).toLocaleString('en-US') + ' / mo';
+      flatAnnualDisplay.textContent = '$' + Math.round(flatAnnual).toLocaleString('en-US') + ' / year in fees';
+
+      onefundingFeeDisplay.textContent = '$' + Math.round(onefundingMonthly).toLocaleString('en-US') + ' / mo';
+      onefundingAnnualDisplay.textContent = '$' + Math.round(onefundingAnnual).toLocaleString('en-US') + ' / year in fees';
+
+      netSavingsDisplay.textContent = '$' + Math.round(netAnnualSavings).toLocaleString('en-US') + ' / year';
+    }
+
+    slider.addEventListener('input', update);
+    update();
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initCalculator);
+  } else {
+    initCalculator();
+  }
+</script>

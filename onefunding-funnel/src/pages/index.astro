@@ -1,0 +1,59 @@
+---
+// index.astro - OneFunding LLC / 1 Funding Source 8-Section Master Funnel
+import Layout from '../layouts/Layout.astro';
+import HeaderNav from '../components/HeaderNav.astro';
+import HeroSection from '../components/HeroSection.astro';
+import AuthorityBar from '../components/AuthorityBar.astro';
+import ProblemSection from '../components/ProblemSection.astro';
+import AgitationSection from '../components/AgitationSection.astro';
+import SolutionSection from '../components/SolutionSection.astro';
+import HowItWorksSection from '../components/HowItWorksSection.astro';
+import SocialProofSection from '../components/SocialProofSection.astro';
+import FaqSection from '../components/FaqSection.astro';
+import CloserSection from '../components/CloserSection.astro';
+import ModalAudit from '../components/ModalAudit.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<Layout 
+  title="OneFunding — Stop Overpaying on Credit Card Processing | Interchange-Plus Rates & Zero Downtime"
+  description="OneFunding gives high-growth and high-risk merchants Interchange-Plus wholesale rates, next-day funding, and multi-gateway underwriting that never gets shut down."
+>
+  <!-- Sticky Header Navigation -->
+  <HeaderNav />
+
+  <main>
+    <!-- Section 1: The Hook (Hero Above the Fold) -->
+    <HeroSection />
+
+    <!-- Section 2: Authority Bar (The Flex) -->
+    <AuthorityBar />
+
+    <!-- Section 3: The Problem (PAS Step 1) -->
+    <ProblemSection />
+
+    <!-- Section 4: Agitation (PAS Step 2 - Cost of Inaction) -->
+    <AgitationSection />
+
+    <!-- Section 5: The Paradigm Shift (PAS Step 3 - Light Tone Pivot & Savings Calculator) -->
+    <SolutionSection />
+
+    <!-- Section 6: How It Works (3-Step Effortless Diagonal Timeline) -->
+    <HowItWorksSection />
+
+    <!-- Section 7: Deep-Dive Social Proof & Case Studies (No Carousels) -->
+    <SocialProofSection />
+
+    <!-- Section 8: Objection Demolition FAQ -->
+    <FaqSection />
+
+    <!-- Section 8: The Closer (Bottom Hero & Lead Capture Hub) -->
+    <CloserSection />
+  </main>
+
+  <!-- Global Fast Action Popup Modal -->
+  <ModalAudit />
+
+  <!-- Global Footer & Compliance -->
+  <Footer />
+</Layout>

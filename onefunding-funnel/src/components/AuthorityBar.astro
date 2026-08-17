@@ -1,0 +1,172 @@
+---
+// AuthorityBar.astro - Clean Authentic Gateway & Compliance Partner Bar
+---
+
+<section class="authority-bar-clean">
+  <div class="container">
+    <div class="authority-header text-center">
+      <span class="authority-label">PROCESSED OVER <span class="counter-highlight">$<span id="live-counter">2,345,678</span></span> AND GROWING</span>
+    </div>
+
+    <!-- Clean Metric Stat Row -->
+    <div class="stats-clean-row">
+      <div class="stat-clean-item">
+        <div class="stat-clean-num" style="color: #9F5A20;">135+ </div>
+        <div class="stat-clean-lbl">Currencies & Crypto</div>
+      </div>
+      <div class="stat-clean-item">
+        <div class="stat-clean-num" style="color: #3B5A10;">99.9%</div>
+        <div class="stat-clean-lbl">Uptime SLA Guarantee</div>
+      </div>  
+      <div class="stat-clean-item">
+        <div class="stat-clean-num" style="color: #BEC050;">50+</div>
+        <div class="stat-clean-lbl">Specialized Industries</div>
+      </div>
+      <div class="stat-clean-item">
+        <div class="stat-clean-num" style="color: #FDD365;">24–48h</div>
+        <div class="stat-clean-lbl">Custom Approvals</div>
+      </div>
+      <div class="stat-clean-item">
+        <div class="stat-clean-num" style="color: #7E7768;">$2.8M+</div>
+        <div class="stat-clean-lbl">Processed Daily</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .authority-bar-clean {
+    background: var(--bg-subtle);
+    border-top: 1px solid var(--border-light);
+    border-bottom: 1px solid var(--border-light);
+    padding: 2.5rem 0;
+  }
+
+  .authority-header {
+    margin-bottom: 1.5rem;
+  }
+
+  .authority-label {
+    font-size: 0.74rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    color: var(--text-muted);
+    text-transform: uppercase;
+  }
+
+  .counter-highlight {
+    color: #FFDF00;
+    font-size: 1.1rem;
+    font-weight: 800;
+    letter-spacing: 0.02em;
+    display: inline-block;
+    vertical-align: baseline;
+    text-shadow: 0 0 12px rgba(255, 223, 0, 0.25);
+  }
+
+  .logos-row {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 2rem 3rem;
+    margin-bottom: 2rem;
+  }
+
+  .logo-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.2rem;
+  }
+
+  .logo-brand {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+  }
+
+  .logo-text {
+    font-family: var(--font-display);
+    font-size: 1.25rem;
+    font-weight: 800;
+    color: var(--text-heading);
+    letter-spacing: -0.01em;
+  }
+
+  .auth-text {
+    color: #1e3a8a;
+    font-size: 1.2rem;
+  }
+
+  .usa-text {
+    color: #047857;
+    font-size: 1.15rem;
+  }
+
+  .legit-text {
+    color: var(--emerald-primary);
+  }
+
+  .logo-role {
+    font-size: 0.68rem;
+    font-weight: 600;
+    color: var(--text-muted);
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+  }
+
+  /* Stats Clean Row */
+  .stats-clean-row {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 1.5rem;
+    padding-top: 1.75rem;
+    border-top: 1px solid var(--border-light);
+    text-align: center;
+  }
+
+  .stat-clean-num {
+    font-family: var(--font-display);
+    font-size: 1.45rem;
+    font-weight: 800;
+    color: var(--text-heading);
+    line-height: 1.1;
+  }
+
+  .text-emerald {
+    color: var(--emerald-primary);
+  }
+
+  .text-cyan {
+    color: var(--cyan-primary);
+  }
+
+  .stat-clean-lbl {
+    font-size: 0.78rem;
+    color: var(--text-muted);
+    margin-top: 0.25rem;
+    font-weight: 500;
+  }
+
+  @media (max-width: 800px) {
+    .stats-clean-row {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.25rem;
+    }
+  }
+</style>
+
+<script>
+  // Live Counter Logic
+  const counterElement = document.getElementById('live-counter');
+  if (counterElement) {
+    let currentValue = 2345678;
+    setInterval(() => {
+      // Increase by hundreds (e.g. random value between 100 and 900)
+      const increment = Math.floor(Math.random() * 800) + 100;
+      currentValue += increment;
+      counterElement.textContent = currentValue.toLocaleString();
+    }, 1000);
+  }
+</script>

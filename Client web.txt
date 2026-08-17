@@ -1,0 +1,92 @@
+Based on a deep extraction and analysis of the provided website (`[https://onefundingllc.lovable.app/](https://onefundingllc.lovable.app/)`) and the context of your GoHighLevel/LeadConnector funnel, here is a comprehensive, element-by-element breakdown and business analysis of **OneFunding LLC (also branded as 1 Funding Source)**.
+
+*Note: The LeadConnector preview link is a private/dynamic staging URL that cannot be accessed directly by external browsers, but I will explain exactly how it fits into the business model below.*
+
+---
+
+## 1. Element & Section-by-Section Website Breakdown
+
+The website is structured as a modern, high-tech B2B payment infrastructure platform (similar to Stripe, Adyen, or Square), tailored for both standard and specialized industries.
+
+### **Header / Navigation (The Ecosystem)**
+
+* **Payments:** Options for online, in-person (Terminal), pre-built Checkouts, and "Agentic Commerce" (AI-driven purchasing).
+* **Revenue:** Subscription billing, one-time invoicing, capital/business financing, and virtual/physical card issuing.
+* **Target Audiences:** Ecommerce, SaaS, Marketplaces, Enterprises, and Global Businesses.
+* **Developer Tools:** APIs, SDKs (Node, Python, Ruby), and documentation.
+
+### **Hero Section (The Hook)**
+
+* **Tagline:** *"Payment infrastructure to grow your revenue."*
+* **Live Data Element:** Displays a dynamic ticker of "Payments processed today" (e.g., $2.8M+).
+* **Call to Action (CTA):** "Get started" and "Contact sales," targeting immediate sign-ups and high-volume enterprise negotiations.
+
+### **Social Proof & Integrations Section**
+
+* **Trusted Brands/Tech:** Lists major industry players like **NMI, Authorize.net, Fluidpay, USA ePay, Persona, Avera MD, and Stigma Supplements.**
+* *Insight:* Mentioning gateways like NMI and Fluidpay indicates that OneFunding likely operates as an advanced Payment Facilitator (PayFac) or a modern ISO (Independent Sales Organization) that uses these gateways on the backend while providing a sleek front-end API.
+
+### **Core Offerings (Products Suite)**
+
+* **In-Person Payments:** Point of Sale (POS) for tap, insert, and swipe.
+* **Checkout & Digital Wallets:** LinkPay, Affirm (Buy Now, Pay Later), Cash App, Apple Pay, Google Pay.
+* **Advanced Tech:** Crypto and Stablecoin settlement (USDB, CASH) for borderless money movement.
+* **Card Issuing:** Creating white-labeled Visa cards for platform users.
+
+### **Scale & Reliability Section**
+
+* **Key Metrics:** 135+ currencies, 99.9% uptime, 50+ industries served, 24/7 support.
+* **Processing Power:** Mentions handling 10,000+ API requests per second and 150,000+ transactions per minute.
+
+### **Compliance & Partnership (Crucial Section)**
+
+* **LegitScript Certified Partner:** This is a massive selling point. LegitScript certification is required for processing payments in highly regulated industries (like telemedicine, online pharmacies, and dietary supplements).
+* **Features:** Enhanced underwriting, continuous monitoring, and real-time alerts.
+
+### **FAQ & Footer**
+
+* **Approval Time:** 24 to 48 hours.
+* **Pricing Structure:** Transparent per-transaction pricing, with "Interchange-Plus" pricing available for high-volume merchants.
+* **Legal Disclaimer:** "1 Funding Source is not a bank. Payment processing provided through our partner network."
+
+---
+
+## 2. Deep Business Analysis (The "Deep Grass" of the Client)
+
+To truly understand what this client does, you have to look past the surface of "credit card processing."
+
+### **What is their actual Business Model?**
+
+OneFunding LLC is a **FinTech Payment Provider** that bridges the gap between traditional, clunky merchant accounts and modern, developer-friendly APIs.
+They are positioning themselves as a "Stripe alternative" for businesses that Stripe typically rejects or underserves. While Stripe instantly approves accounts and then shuts them down later for compliance issues, OneFunding uses customized underwriting to provide stable, long-term payment processing.
+
+### **Who is their Target Audience?**
+
+1. **High-Risk / Regulated Industries:** By highlighting **LegitScript**, "Stigma Supplements", and "Avera MD" (Healthcare), they are aggressively targeting the nutraceutical, telehealth, CBD, and supplement spaces. These businesses struggle to find reliable payment processors.
+2. **Global & High-Tech Commerce:** Offering Stablecoin/Crypto settlements and "Agentic Commerce" appeals to forward-thinking SaaS, AI startups, and international marketplaces.
+3. **High-Volume Traditional Businesses:** Restaurants, retail, and B2B software companies who want lower rates (Interchange-Plus pricing) rather than flat-rate fees.
+
+### **The Competitive Advantage**
+
+Their distinct edge is **Payment Orchestration**. By integrating with multiple backend gateways (NMI, USA ePay, Authorize.net), if one banking partner goes down or rejects a transaction, OneFunding can route the payment through another gateway. This ensures 99.9% uptime and protects merchants from sudden account closures.
+
+---
+
+## 3. Web Research & Social Presence Insights
+
+* **Startup / Staging Phase:** The website URL `onefundingllc.lovable.app` is hosted on **Lovable.dev**, an AI-powered web development platform used for rapid prototyping and building SaaS platforms. This indicates the client is currently in an active build/rebranding phase or launching a brand-new digital presence.
+* **The LeadConnector Funnel:** The `sites.leadconnectorhq.com` link is a funnel built on **GoHighLevel (GHL)**. Because OneFunding is a B2B service, this funnel is almost certainly designed as a **Lead Generation / Sales Pipeline tool**.
+* *How they use it:* They likely run ads (LinkedIn, Google) targeting businesses searching for "lower processing fees" or "Stripe alternatives." The traffic goes to the GoHighLevel funnel, which offers a "Free Rate Analysis" or "Custom API Demo." Once the lead fills out the form, GHL automates the follow-up via SMS and email to book them onto a sales call.
+
+
+* **Digital Footprint:** Because they are utilizing rapid-build tools (Lovable + GoHighLevel) under "OneFunding LLC" or "1 Funding Source", they appear to be a lean, highly aggressive B2B sales operation. There is no bloated corporate footprint yet; they are built for speed, direct response marketing, and fast onboarding.
+
+## Summary for Your Strategy
+
+If you are working with or for this client, understand that **they sell reliability, technology, and financial security to businesses.**
+
+Do not treat them like a traditional "credit card machine" company. Treat them as a **FinTech software company**. Their marketing should focus on:
+
+1. Rescuing merchants who have had funds held or accounts shut down by Stripe/PayPal.
+2. Saving money for 7-to-8 figure businesses via Interchange-Plus pricing.
+3. Providing seamless developer APIs for software companies wanting to embed payments into their own apps.

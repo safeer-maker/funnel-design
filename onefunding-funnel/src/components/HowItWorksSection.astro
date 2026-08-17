@@ -1,0 +1,210 @@
+---
+// HowItWorksSection.astro - Clean 3-Step Effortless Onboarding Timeline
+---
+
+<section class="section section-subtle how-it-works-section" id="howItWorks">
+  <div class="container">
+    <div class="section-header-clean">
+      <h2>
+        From Overpaying to Protected in Under 48 Hours
+      </h2>
+      <p>
+        We handle all technical gateway routing, underwriting, and migration in the background so your store never experiences a second of payment downtime.
+      </p>
+    </div>
+
+    <div class="timeline-steps">
+      <!-- Step 1 -->
+      <div class="step-card-row">
+        <div class="step-text-col">
+          <div class="step-counter">STEP 01</div>
+          <h3 class="step-heading">Submit Your 60-Second Analysis Request</h3>
+          <p class="step-paragraph">
+            Provide your estimated monthly volume and current processor, or upload a recent processing statement. No long-term contracts, zero obligation, and complete confidentiality.
+          </p>
+          <div class="step-perks">
+            <span>⚡ 60-second simple form</span>
+            <span>🔒 256-bit bank-level encryption</span>
+          </div>
+        </div>
+        <div class="step-image-col">
+          <div class="step-image-box">
+            <img 
+              src="/images/card_checkout.jpg" 
+              alt="Step 1: Simple 60-second processing review submission" 
+              class="step-photo"
+              loading="lazy"
+              width="540"
+              height="340"
+            />
+          </div>
+        </div>
+      </div>
+
+      <!-- Step 2 -->
+      <div class="step-card-row reverse-layout">
+        <div class="step-text-col">
+          <div class="step-counter step-cyan-pill">STEP 02</div>
+          <h3 class="step-heading">Receive Your Custom Rate & Redundancy Audit</h3>
+          <p class="step-paragraph">
+            A Senior Payment Specialist conducts a line-by-line statement review. We show you exact fee markup reductions and map out your optimal multi-gateway failover routing.
+          </p>
+          <div class="step-perks">
+            <span>📊 Itemized line-by-line fee comparison</span>
+            <span>🛡️ Tailored chargeback & high-risk defense plan</span>
+          </div>
+        </div>
+        <div class="step-image-col">
+          <div class="step-image-box">
+            <img 
+              src="/images/pos_terminal.jpg" 
+              alt="Step 2: Custom statement audit and gateway strategy" 
+              class="step-photo"
+              loading="lazy"
+              width="540"
+              height="340"
+            />
+          </div>
+        </div>
+      </div>
+
+      <!-- Step 3 -->
+      <div class="step-card-row">
+        <div class="step-text-col">
+          <div class="step-counter step-emerald-pill">STEP 03</div>
+          <h3 class="step-heading">Switch in 24–48 Hours & Keep More Cash</h3>
+          <p class="step-paragraph">
+            Your new merchant account goes live with custom pre-underwriting. Your old processor stays active until you are 100% verified, ensuring zero payment disruption. Next-day deposits land directly in your account.
+          </p>
+          <div class="step-perks">
+            <span>🚀 0 seconds of store downtime</span>
+            <span>💰 Next business day cash deposits</span>
+          </div>
+        </div>
+        <div class="step-image-col">
+          <div class="step-image-box">
+            <img 
+              src="/images/merchant_success.jpg" 
+              alt="Step 3: Confident merchant enjoying next-day deposits and lower rates" 
+              class="step-photo"
+              loading="lazy"
+              width="540"
+              height="340"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .timeline-steps {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+  }
+
+  .step-card-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    align-items: center;
+    background: #ffffff;
+    border: 1px solid var(--border-light);
+    border-radius: var(--radius-xl);
+    padding: 2.5rem;
+    box-shadow: var(--shadow-sm);
+  }
+
+  .reverse-layout {
+    direction: rtl;
+  }
+
+  .reverse-layout > * {
+    direction: ltr;
+  }
+
+  .step-text-col {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .step-counter {
+    font-family: var(--font-display);
+    font-size: 0.78rem;
+    font-weight: 800;
+    letter-spacing: 0.08em;
+    padding: 0.25rem 0.75rem;
+    border-radius: var(--radius-sm);
+    background: var(--indigo-bg);
+    color: var(--indigo-primary);
+    border: 1px solid var(--indigo-border);
+    margin-bottom: 1rem;
+  }
+
+  .step-cyan-pill {
+    background: var(--cyan-bg);
+    color: var(--cyan-primary);
+    border-color: var(--cyan-border);
+  }
+
+  .step-emerald-pill {
+    background: var(--emerald-bg);
+    color: var(--emerald-primary);
+    border-color: var(--emerald-border);
+  }
+
+  .step-heading {
+    font-size: 1.35rem;
+    color: var(--text-heading);
+    margin-bottom: 0.75rem;
+  }
+
+  .step-paragraph {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: var(--text-body);
+    margin-bottom: 1.25rem;
+  }
+
+  .step-perks {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+    font-size: 0.86rem;
+    font-weight: 600;
+    color: var(--text-heading);
+  }
+
+  .step-image-box {
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    border: 1px solid var(--border-light);
+    box-shadow: var(--shadow-sm);
+  }
+
+  .step-photo {
+    width: 100%;
+    height: 280px;
+    object-fit: cover;
+    display: block;
+  }
+
+  @media (max-width: 850px) {
+    .step-card-row {
+      grid-template-columns: 1fr;
+      gap: 1.75rem;
+      padding: 1.75rem;
+    }
+
+    .reverse-layout {
+      direction: ltr;
+    }
+
+    .step-photo {
+      height: 220px;
+    }
+  }
+</style>
