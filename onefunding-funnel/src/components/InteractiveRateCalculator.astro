@@ -26,10 +26,10 @@
         aria-label="Monthly Processing Volume Slider"
       />
       <div class="slider-markers">
-        <span>$10K/mo</span>
-        <span>$100K/mo</span>
-        <span>$250K/mo</span>
-        <span>$500K+/mo</span>
+        <span class="marker" data-val="10000" style="left: 0%;">$10K</span>
+        <span class="marker" data-val="100000" style="left: 18.4%; transform: translateX(-50%);">$100K</span>
+        <span class="marker" data-val="250000" style="left: 49%; transform: translateX(-50%);">$250K</span>
+        <span class="marker" data-val="500000" style="left: 100%; transform: translateX(-100%);">$500K+</span>
       </div>
     </div>
   </div>
@@ -139,7 +139,7 @@
     border-radius: 50%;
     background: var(--emerald-primary);
     cursor: pointer;
-    box-shadow: 0 2px 6px rgba(5, 150, 105, 0.4);
+    box-shadow: 0 2px 8px rgba(5, 150, 105, 0.4);
     border: 2px solid #ffffff;
     transition: transform 0.15s ease;
   }
@@ -149,79 +149,90 @@
   }
 
   .slider-markers {
-    display: flex;
-    justify-content: space-between;
-    font-size: 0.78rem;
-    font-weight: 600;
-    color: var(--text-muted);
-    margin-top: 0.6rem;
+    position: relative;
+    width: 100%;
+    height: 18px;
+    margin-top: 0.65rem;
   }
 
+  .slider-markers .marker {
+    position: absolute;
+    top: 0;
+    font-size: 0.72rem;
+    font-weight: 700;
+    color: var(--text-muted);
+    cursor: pointer;
+    transition: color 0.15s ease;
+    white-space: nowrap;
+    user-select: none;
+  }
+
+  .slider-markers .marker:hover {
+    color: var(--emerald-primary);
+  }
+
+  /* Comparison Grid */
   .calc-comparison-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 1.25rem;
-    margin-bottom: 1.75rem;
+    margin-bottom: 2rem;
   }
 
   .calc-box {
     padding: 1.35rem 1.5rem;
     border-radius: var(--radius-md);
+    border: 1px solid var(--border-light);
   }
 
   .box-traditional {
-    background: var(--rose-bg);
-    border: 1px solid var(--rose-border);
+    background: #fff1f2;
+    border-color: #fecdd3;
   }
 
   .box-onefunding {
     background: var(--emerald-bg);
-    border: 1px solid var(--emerald-border);
+    border-color: var(--emerald-border);
   }
 
   .box-tag {
-    font-size: 0.74rem;
+    font-size: 0.72rem;
     font-weight: 700;
-    letter-spacing: 0.04em;
-    margin-bottom: 0.35rem;
+    letter-spacing: 0.05em;
+    margin-bottom: 0.4rem;
   }
 
-  .text-rose {
-    color: var(--rose-primary);
-  }
-
-  .text-emerald {
-    color: var(--emerald-primary);
-  }
+  .text-rose { color: #e11d48; }
+  .text-emerald { color: var(--emerald-primary); }
 
   .box-num {
     font-family: var(--font-display);
-    font-size: 1.7rem;
+    font-size: 1.6rem;
     font-weight: 800;
-    line-height: 1.1;
   }
 
   .box-sub {
-    font-size: 0.82rem;
+    font-size: 0.8rem;
     color: var(--text-muted);
     margin-top: 0.25rem;
   }
 
   /* Net Savings Strip */
   .net-savings-strip {
+    background: var(--bg-dark);
+    border-radius: var(--radius-lg);
+    padding: 1.5rem 2rem;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    background: var(--bg-dark);
-    border-radius: var(--radius-lg);
-    padding: 1.5rem 1.75rem;
+    gap: 1.5rem;
     color: #ffffff;
-    gap: 1.25rem;
   }
 
   .savings-text-col {
     display: flex;
     flex-direction: column;
+    gap: 0.15rem;
   }
 
   .strip-label {
@@ -233,7 +244,7 @@
 
   .strip-amount {
     font-family: var(--font-display);
-    font-size: 1.85rem;
+    font-size: 2.1rem;
     font-weight: 800;
     color: #ffffff;
     line-height: 1.15;
@@ -276,12 +287,19 @@
     const onefundingFeeDisplay = document.getElementById('onefundingFeeDisplay');
     const onefundingAnnualDisplay = document.getElementById('onefundingAnnualDisplay');
     const netSavingsDisplay = document.getElementById('netSavingsDisplay');
+    const markers = document.querySelectorAll<HTMLElement>('.slider-markers .marker');
 
     if (!slider || !volDisplay) return;
 
+    function updateSliderGradient(val: number, min: number, max: number) {
+      const pct = ((val - min) / (max - min)) * 100;
+      slider.style.background = `linear-gradient(to right, #059669 0%, #059669 ${pct}%, #e2e8f0 ${pct}%, #e2e8f0 100%)`;
+    }
+
     function update() {
       const volume = parseFloat(slider.value);
-      volDisplay.textContent = '$' + volume.toLocaleString('en-US');
+      volDisplay!.textContent = '$' + volume.toLocaleString('en-US');
+      updateSliderGradient(volume, 10000, 500000);
 
       // Traditional 3.5% effective rate
       const flatMonthly = volume * 0.035;
@@ -293,16 +311,27 @@
 
       const netAnnualSavings = flatAnnual - onefundingAnnual;
 
-      flatFeeDisplay.textContent = '$' + Math.round(flatMonthly).toLocaleString('en-US') + ' / mo';
-      flatAnnualDisplay.textContent = '$' + Math.round(flatAnnual).toLocaleString('en-US') + ' / year in fees';
+      if (flatFeeDisplay) flatFeeDisplay.textContent = '$' + Math.round(flatMonthly).toLocaleString('en-US') + ' / mo';
+      if (flatAnnualDisplay) flatAnnualDisplay.textContent = '$' + Math.round(flatAnnual).toLocaleString('en-US') + ' / year in fees';
 
-      onefundingFeeDisplay.textContent = '$' + Math.round(onefundingMonthly).toLocaleString('en-US') + ' / mo';
-      onefundingAnnualDisplay.textContent = '$' + Math.round(onefundingAnnual).toLocaleString('en-US') + ' / year in fees';
+      if (onefundingFeeDisplay) onefundingFeeDisplay.textContent = '$' + Math.round(onefundingMonthly).toLocaleString('en-US') + ' / mo';
+      if (onefundingAnnualDisplay) onefundingAnnualDisplay.textContent = '$' + Math.round(onefundingAnnual).toLocaleString('en-US') + ' / year in fees';
 
-      netSavingsDisplay.textContent = '$' + Math.round(netAnnualSavings).toLocaleString('en-US') + ' / year';
+      if (netSavingsDisplay) netSavingsDisplay.textContent = '$' + Math.round(netAnnualSavings).toLocaleString('en-US') + ' / year';
     }
 
     slider.addEventListener('input', update);
+
+    markers.forEach((marker) => {
+      marker.addEventListener('click', () => {
+        const targetVal = marker.getAttribute('data-val');
+        if (targetVal) {
+          slider.value = targetVal;
+          update();
+        }
+      });
+    });
+
     update();
   }
 
