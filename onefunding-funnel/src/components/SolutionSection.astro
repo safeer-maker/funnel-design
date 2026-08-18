@@ -1,9 +1,11 @@
 ---
-// SolutionSection.astro - Clean Light-Theme Solution Architecture & Differentiators
+// SolutionSection.astro - Clean Open-Air Solution Architecture (Color-Coded Numbers + Checkmarks Left, 2:3 Photo Right)
 ---
 
 <section class="section section-white solution-section" id="solution">
   <div class="container">
+
+    <!-- Section Header -->
     <div class="section-header-clean">
       <h2>
         Payment Infrastructure Built to Protect Your Cash Flow
@@ -13,198 +15,285 @@
       </p>
     </div>
 
-    <!-- 3 Core Differentiator Columns (Clean Layout) -->
-    <div class="solution-pillars-grid">
-      <!-- Pillar 1 -->
-      <div class="pillar-col">
-        <div class="pillar-icon emerald-icon">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#059669" stroke-width="2.2">
-            <line x1="12" y1="1" x2="12" y2="23"></line>
-            <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
-          </svg>
+    <!-- 2-Column Layout: Solution Points Left, 2:3 Organic Visual Right -->
+    <div class="solution-layout-grid">
+
+      <!-- LEFT: Color-Coded Numbered Points with Checkmark Blocks -->
+      <div class="solution-points-col">
+
+        <!-- Point 01 -->
+        <div class="solution-point point-emerald" data-animate>
+          <div class="solution-header-row">
+            <h3 class="solution-title">Interchange-Plus Pricing</h3>
+          </div>
+          <ul class="solution-checklist">
+            <li>
+              <span class="check-icon icon-emerald">✓</span>
+              <span>True wholesale network pass-through without hidden markups</span>
+            </li>
+            <li>
+              <span class="check-icon icon-emerald">✓</span>
+              <span>Next business day direct deposit funding into your bank</span>
+            </li>
+            <li>
+              <span class="check-icon icon-emerald">✓</span>
+              <span>Zero cancellation penalties or long-term lock-in contracts</span>
+            </li>
+          </ul>
         </div>
-        <h3 class="pillar-title">Interchange-Plus Pricing</h3>
-        <p class="pillar-desc">
-          Pay true wholesale card network costs plus a slim, transparent margin. Eliminate arbitrary rate tiers and save 20% to 40% immediately over aggregator pricing.
-        </p>
-        <ul class="pillar-list">
-          <li>✓ True wholesale cost transparency</li>
-          <li>✓ Zero hidden cancellation fees</li>
-          <li>✓ Next business day cash deposits</li>
-        </ul>
+
+        <!-- Point 02 -->
+        <div class="solution-point point-indigo" data-animate>
+          <div class="solution-header-row">
+            <h3 class="solution-title">Multi-Gateway Failover & Smart Routing</h3>
+          </div>
+          <ul class="solution-checklist">
+            <li>
+              <span class="check-icon icon-indigo">✓</span>
+              <span>Intelligent load-balancing for peak sales volumes</span>
+            </li>
+            <li>
+              <span class="check-icon icon-indigo">✓</span>
+              <span>Automated secondary bank retries on soft processor declines</span>
+            </li>
+            <li>
+              <span class="check-icon icon-indigo">✓</span>
+              <span>Multi-MID orchestration across separate acquiring banks</span>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Point 03 -->
+        <div class="solution-point point-amber" data-animate>
+          <div class="solution-header-row">
+            <h3 class="solution-title">Upfront Human Underwriting & Defense</h3>
+          </div>
+          <ul class="solution-checklist">
+            <li>
+              <span class="check-icon icon-amber">✓</span>
+              <span>LegitScript & high-growth compliance expertise</span>
+            </li>
+            <li>
+              <span class="check-icon icon-amber">✓</span>
+              <span>Built-in chargeback alert integrations (Verifi & Ethoca)</span>
+            </li>
+            <li>
+              <span class="check-icon icon-amber">✓</span>
+              <span>Dedicated direct-line merchant account manager</span>
+            </li>
+          </ul>
+        </div>
+
       </div>
 
-      <!-- Pillar 2 -->
-      <div class="pillar-col">
-        <div class="pillar-icon indigo-icon">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#4f46e5" stroke-width="2.2">
-            <rect x="2" y="2" width="20" height="8" rx="2" ry="2"></rect>
-            <rect x="2" y="14" width="20" height="8" rx="2" ry="2"></rect>
-            <line x1="6" y1="6" x2="6.01" y2="6"></line>
-            <line x1="6" y1="18" x2="6.01" y2="18"></line>
-          </svg>
+      <!-- RIGHT: 2:3 Organic Photography -->
+      <div class="solution-visual-col">
+        <div class="solution-image-sticky">
+          <div class="solution-image-frame">
+            <img
+              src="/images/cafe_owner_pos.jpg"
+              alt="Happy business manager operating sleek tablet POS in a bright modern cafe"
+              class="solution-photo"
+              loading="lazy"
+              width="800"
+              height="1200"
+            />
+          </div>
         </div>
-        <h3 class="pillar-title">Multi-Gateway Failover</h3>
-        <p class="pillar-desc">
-          Eliminate single points of failure. Our intelligent orchestration automatically routes transactions between NMI, Authorize.Net, and Fluidpay in milliseconds.
-        </p>
-        <ul class="pillar-list">
-          <li>✓ 99.9% guaranteed uptime SLA</li>
-          <li>✓ Smart load-balancing for peak sales</li>
-          <li>✓ Automated secondary bank retries</li>
-        </ul>
       </div>
 
-      <!-- Pillar 3 -->
-      <div class="pillar-col">
-        <div class="pillar-icon cyan-icon">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#0284c7" stroke-width="2.2">
-            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
-            <polyline points="9 12 11 14 15 10"></polyline>
-          </svg>
-        </div>
-        <h3 class="pillar-title">LegitScript & High-Risk Underwriting</h3>
-        <p class="pillar-desc">
-          Scale nutraceuticals, telehealth, coaching, and subscriptions with confidence. We verify your business model before going live to eliminate surprise account freezes.
-        </p>
-        <ul class="pillar-list">
-          <li>✓ LegitScript certified compliance</li>
-          <li>✓ Chargeback defense & early alerts</li>
-          <li>✓ Dedicated 24/7 account manager</li>
-        </ul>
-      </div>
-    </div>
-
-    <!-- Multi-Gateway Orchestration Diagram -->
-    <div class="gateway-diagram-section">
-      <div class="diagram-text-center text-center">
-        <h3>Intelligent Multi-Gateway Redundancy Flow</h3>
-        <p>How OneFunding protects your store from acquiring bank downtime</p>
-      </div>
-      <div class="diagram-image-container">
-        <img 
-          src="/images/gateway_routing.jpg" 
-          alt="OneFunding Multi-Gateway Payment Orchestration and Automated Failover Architecture" 
-          class="diagram-image"
-          loading="lazy"
-          width="960"
-          height="540"
-        />
-      </div>
     </div>
 
   </div>
 </section>
 
 <style>
-  .solution-pillars-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 3rem;
-    margin-bottom: 4rem;
+  .solution-section {
+    position: relative;
+    padding: 5rem 0;
   }
 
-  .pillar-col {
+  /* ===== 2-Column Solution Layout ===== */
+  .solution-layout-grid {
+    display: grid;
+    grid-template-columns: 1.15fr 0.85fr;
+    gap: 4.5rem;
+    align-items: center;
+    margin-top: 3rem;
+  }
+
+  /* ===== LEFT: Solution Points ===== */
+  .solution-points-col {
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
+    gap: 2.75rem;
   }
 
-  .pillar-icon {
-    width: 46px;
-    height: 46px;
-    border-radius: 12px;
+  .solution-point {
+    display: flex;
+    flex-direction: column;
+    gap: 0.9rem;
+    opacity: 0;
+    transform: translateY(18px);
+    transition: opacity 0.55s ease, transform 0.55s ease;
+  }
+
+  .solution-point.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* Header Row: Color-Coded Number + Title */
+  .solution-header-row {
     display: flex;
     align-items: center;
-    justify-content: center;
-    margin-bottom: 1.15rem;
+    gap: 1rem;
   }
 
-  .emerald-icon {
+  .solution-num {
+    font-family: var(--font-display);
+    font-size: 1.55rem;
+    font-weight: 900;
+    line-height: 1;
+    padding: 0.35rem 0.65rem;
+    border-radius: var(--radius-md);
+    letter-spacing: -0.02em;
+    flex-shrink: 0;
+  }
+
+  /* Color Codes */
+  .num-emerald {
     background: var(--emerald-bg);
+    color: var(--emerald-primary);
     border: 1px solid var(--emerald-border);
   }
 
-  .indigo-icon {
-    background: var(--indigo-bg);
-    border: 1px solid var(--indigo-border);
+  .num-indigo {
+    background: #eef2ff;
+    color: #4f46e5;
+    border: 1px solid #c7d2fe;
   }
 
-  .cyan-icon {
-    background: var(--cyan-bg);
-    border: 1px solid var(--cyan-border);
+  .num-amber {
+    background: #fffbeb;
+    color: #d97706;
+    border: 1px solid #fde68a;
   }
 
-  .pillar-title {
-    font-size: 1.25rem;
-    color: var(--text-heading);
-    margin-bottom: 0.5rem;
-  }
-
-  .pillar-desc {
-    font-size: 0.94rem;
-    line-height: 1.6;
-    color: var(--text-body);
-    margin-bottom: 1.15rem;
-  }
-
-  .pillar-list {
-    list-style: none;
-    padding: 0;
-    margin-top: auto;
-    display: flex;
-    flex-direction: column;
-    gap: 0.4rem;
-  }
-
-  .pillar-list li {
-    font-size: 0.86rem;
-    font-weight: 600;
-    color: var(--text-body);
-  }
-
-  /* Gateway Diagram Section */
-  .gateway-diagram-section {
-    background: var(--bg-subtle);
-    border: 1px solid var(--border-light);
-    border-radius: var(--radius-xl);
-    padding: 2.25rem;
-    box-shadow: var(--shadow-sm);
-    margin-bottom: 2rem;
-  }
-
-  .diagram-text-center {
-    margin-bottom: 1.5rem;
-  }
-
-  .diagram-text-center h3 {
+  .solution-title {
     font-size: 1.35rem;
     color: var(--text-heading);
-    margin-bottom: 0.25rem;
+    font-weight: 700;
+    line-height: 1.3;
   }
 
-  .diagram-text-center p {
-    font-size: 0.92rem;
-    color: var(--text-muted);
+  /* Checklist Blocks */
+  .solution-checklist {
+    list-style: none;
+    padding: 0;
+    margin-left: 0.25rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.65rem;
   }
 
-  .diagram-image-container {
-    border-radius: var(--radius-lg);
+  .solution-checklist li {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.65rem;
+    font-size: 0.94rem;
+    font-weight: 500;
+    color: var(--text-body);
+    line-height: 1.5;
+  }
+
+  .check-icon {
+    font-weight: 900;
+    font-size: 0.95rem;
+    line-height: 1.5;
+    flex-shrink: 0;
+  }
+
+  .icon-emerald { color: var(--emerald-primary); }
+  .icon-indigo  { color: #4f46e5; }
+  .icon-amber   { color: #d97706; }
+
+  /* ===== RIGHT: 2:3 Organic Visual ===== */
+  .solution-visual-col {
+    position: relative;
+    display: flex;
+    justify-content: center;
+  }
+
+  .solution-image-sticky {
+    position: sticky;
+    top: 100px;
+    width: 100%;
+    max-width: 440px;
+  }
+
+  .solution-image-frame {
+    border-radius: var(--radius-xl);
     overflow: hidden;
-    border: 1px solid var(--border-light);
+    box-shadow: 0 16px 40px -10px rgba(15, 23, 42, 0.08), 0 6px 16px -4px rgba(15, 23, 42, 0.03);
     background: #ffffff;
+    border: 1px solid var(--border-light);
   }
 
-  .diagram-image {
+  .solution-photo {
     width: 100%;
     height: auto;
     display: block;
+    object-fit: cover;
+    aspect-ratio: 2 / 3;
+    transition: transform 0.45s ease;
   }
 
-  @media (max-width: 900px) {
-    .solution-pillars-grid {
+  .solution-image-frame:hover .solution-photo {
+    transform: scale(1.02);
+  }
+
+  /* ===== RESPONSIVE ===== */
+  @media (max-width: 1024px) {
+    .solution-layout-grid {
       grid-template-columns: 1fr;
-      gap: 2rem;
+      gap: 3rem;
+    }
+
+    .solution-image-sticky {
+      position: static;
+      max-width: 420px;
+      margin: 0 auto;
     }
   }
 </style>
+
+<script>
+  function initSolutionAnimations() {
+    const points = document.querySelectorAll('.solution-point');
+    if (!points.length) return;
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            const index = Array.from(points).indexOf(entry.target);
+            setTimeout(() => {
+              entry.target.classList.add('is-visible');
+            }, index * 120);
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.15 }
+    );
+
+    points.forEach((p) => observer.observe(p));
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initSolutionAnimations);
+  } else {
+    initSolutionAnimations();
+  }
+</script>

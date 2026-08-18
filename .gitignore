@@ -1,1 +1,8 @@
 node_modules/
+.astro/*
+dist/*
+onefunding-funnel/.astro/*
+onefunding-funnel/dist/*
+onefunding-funnel/node_modules/*
+onefunding-funnel/.output/*
+
