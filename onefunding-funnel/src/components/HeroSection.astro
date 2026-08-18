@@ -40,12 +40,30 @@
         </div>
       </div>
 
-      <!-- Right Column: Clean Dashboard Visual -->
+      <!-- Right Column: Clean Dynamic Focal Image Stack -->
       <div class="hero-visual">
-        <div class="overlapping-images">
-          <img src="/images/contactless_payment.jpg" alt="Contactless Payment" class="overlap-img img-1" loading="eager" />
-          <img src="/images/man_paying.jpg" alt="Man Paying" class="overlap-img img-2" loading="eager" />
-          <img src="/images/sucess_hero image.jpg" alt="Success Hero" class="overlap-img img-3" loading="eager" />
+        <div class="focal-stage" id="heroFocalStage" aria-label="Interactive Merchant Payment Showcase">
+          <!-- Image 1 -->
+          <div class="focal-card card-0 is-active" data-index="0">
+            <img src="/images/contactless_payment.jpg" alt="Contactless Smart POS Payment" loading="eager" />
+          </div>
+
+          <!-- Image 2 -->
+          <div class="focal-card card-1 is-next" data-index="1">
+            <img src="/images/man_paying.jpg" alt="Retail Customer Checkout" loading="eager" />
+          </div>
+
+          <!-- Image 3 -->
+          <div class="focal-card card-2 is-prev" data-index="2">
+            <img src="/images/sucess_hero image.jpg" alt="Merchant Business Scaling Success" loading="eager" />
+          </div>
+        </div>
+
+        <!-- Focal Stage Indicators -->
+        <div class="focal-indicators" id="heroFocalDots">
+          <button class="focal-dot active" data-target="0" aria-label="Show slide 1"></button>
+          <button class="focal-dot" data-target="1" aria-label="Show slide 2"></button>
+          <button class="focal-dot" data-target="2" aria-label="Show slide 3"></button>
         </div>
         
         <!-- Social Proof Form 1: Verified Rating -->
@@ -71,12 +89,8 @@
   .hero-grid {
     display: grid;
     grid-template-columns: 1.15fr 0.95fr;
-    gap: 3rem;
+    gap: 3.5rem;
     align-items: center;
-  }
-
-  .hero-badge {
-    margin-bottom: 1.1rem;
   }
 
   .hero-title {
@@ -107,7 +121,7 @@
     display: flex;
     align-items: center;
     gap: 0.65rem;
-    margin-top: 1rem;
+    margin-top: 1.25rem;
     justify-content: flex-start;
   }
 
@@ -143,62 +157,144 @@
     margin-top: 0.75rem;
   }
 
-  /* Right Visual */
+  /* ==========================================================================
+     DYNAMIC AUTO-ROTATING FOCAL IMAGE SHOWCASE
+     ========================================================================== */
   .hero-visual {
     position: relative;
     display: flex;
     flex-direction: column;
+    align-items: center;
   }
 
-  .overlapping-images {
+  .focal-stage {
     position: relative;
     width: 100%;
-    height: 400px;
+    height: 380px;
     margin-bottom: 0.5rem;
+    perspective: 1000px;
   }
 
-  .overlap-img {
+  .focal-card {
     position: absolute;
-    border-radius: var(--radius-lg);
-    box-shadow: var(--shadow-lg);
-    border: 4px solid white;
+    border-radius: 18px;
+    overflow: hidden;
+    cursor: pointer;
+    background: #ffffff;
+    box-shadow: 0 10px 30px rgba(15, 23, 42, 0.12);
+    border: 3px solid #ffffff;
+    transition: all 0.65s cubic-bezier(0.25, 1, 0.5, 1);
+    will-change: transform, opacity, z-index;
+  }
+
+  .focal-card img {
+    width: 100%;
+    height: 100%;
     object-fit: cover;
-    transition: transform 0.3s ease;
+    display: block;
+    transition: transform 0.6s ease;
   }
 
-  .overlap-img:hover {
-    transform: scale(1.05);
+  .focal-caption {
+    position: absolute;
+    bottom: 12px;
+    left: 12px;
+    background: rgba(15, 23, 42, 0.75);
+    backdrop-filter: blur(8px);
+    color: #ffffff;
+    font-family: var(--font-display);
+    font-size: 0.76rem;
+    font-weight: 700;
+    padding: 0.35rem 0.75rem;
+    border-radius: 999px;
+    opacity: 0;
+    transform: translateY(6px);
+    transition: all 0.4s ease;
+    pointer-events: none;
+    letter-spacing: 0.02em;
+  }
+
+  /* Active Large Focal Slot (Front & Center) */
+  .focal-card.is-active {
+    width: 78%;
+    height: 290px;
+    top: 45px;
+    left: 5%;
     z-index: 10;
+    opacity: 1;
+    transform: translate(0, 0) scale(1) rotate(0deg);
+    box-shadow: 0 20px 40px rgba(15, 23, 42, 0.18), 0 0 0 1px rgba(5, 150, 105, 0.2);
   }
 
-  .img-1 {
-    width: 55%;
-    height: 240px;
+  .focal-card.is-active .focal-caption {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* Next Preview Slot (Top Right Behind) */
+  .focal-card.is-next {
+    width: 56%;
+    height: 210px;
     top: 0;
-    left: 0;
-    z-index: 3;
-  }
-
-  .img-2 {
-    width: 50%;
-    height: 220px;
-    top: 40px;
     right: 0;
-    z-index: 2;
+    z-index: 5;
+    opacity: 0.85;
+    transform: translate(0, 0) scale(0.94) rotate(4deg);
+    filter: brightness(0.92);
   }
 
-  .img-3 {
-    width: 60%;
-    height: 220px;
+  /* Previous Preview Slot (Bottom Right Behind) */
+  .focal-card.is-prev {
+    width: 52%;
+    height: 190px;
     bottom: 0;
-    left: 15%;
+    right: 6%;
     z-index: 4;
+    opacity: 0.75;
+    transform: translate(0, 0) scale(0.88) rotate(-3deg);
+    filter: brightness(0.85);
+  }
+
+  .focal-card:hover {
+    box-shadow: 0 24px 48px rgba(15, 23, 42, 0.22);
+  }
+
+  .focal-card.is-next:hover,
+  .focal-card.is-prev:hover {
+    opacity: 1;
+    filter: brightness(1);
+    transform: scale(0.98);
+    z-index: 8;
+  }
+
+  /* Indicators */
+  .focal-indicators {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-top: 0.5rem;
+  }
+
+  .focal-dot {
+    width: 24px;
+    height: 5px;
+    border-radius: 999px;
+    background: #cbd5e1;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    transition: all 0.3s ease;
+  }
+
+  .focal-dot.active {
+    width: 40px;
+    background: var(--emerald-primary);
   }
 
   @media (max-width: 992px) {
     .hero-grid {
       grid-template-columns: 1fr;
-      gap: 2.25rem;
+      gap: 2.5rem;
     }
 
     .hero-content {
@@ -220,5 +316,97 @@
     .hero-cta-block .fud-list {
       justify-content: center;
     }
+
+    .focal-stage {
+      height: 340px;
+    }
+
+    .focal-card.is-active {
+      width: 82%;
+      height: 250px;
+      left: 2%;
+    }
   }
 </style>
+
+<script>
+  // ===== Dynamic Auto-Rotating Hero Image Stage =====
+  function initFocalCarousel() {
+    const stage = document.getElementById('heroFocalStage');
+    const cards = stage?.querySelectorAll<HTMLElement>('.focal-card');
+    const dots = document.querySelectorAll<HTMLElement>('#heroFocalDots .focal-dot');
+
+    if (!stage || !cards || cards.length < 3) return;
+
+    let currentIndex = 0;
+    let autoInterval: ReturnType<typeof setInterval> | null = null;
+    const ROTATION_DELAY = 3200; // 3.2 seconds rotation
+
+    const positions = ['is-active', 'is-next', 'is-prev'];
+
+    function applyPositions(activeIdx: number) {
+      cards.forEach((card, i) => {
+        card.classList.remove('is-active', 'is-next', 'is-prev');
+        // Relative position offset (0 = active, 1 = next, 2 = prev)
+        const rel = (i - activeIdx + cards.length) % cards.length;
+        card.classList.add(positions[rel]);
+      });
+
+      dots.forEach((dot, i) => {
+        dot.classList.toggle('active', i === activeIdx);
+      });
+    }
+
+    function nextSlide() {
+      currentIndex = (currentIndex + 1) % cards.length;
+      applyPositions(currentIndex);
+    }
+
+    function startAutoPlay() {
+      if (autoInterval) clearInterval(autoInterval);
+      autoInterval = setInterval(nextSlide, ROTATION_DELAY);
+    }
+
+    function stopAutoPlay() {
+      if (autoInterval) {
+        clearInterval(autoInterval);
+        autoInterval = null;
+      }
+    }
+
+    // Card Click: Bring clicked card to active large spot
+    cards.forEach((card) => {
+      card.addEventListener('click', () => {
+        const targetIdx = parseInt(card.getAttribute('data-index') || '0', 10);
+        currentIndex = targetIdx;
+        applyPositions(currentIndex);
+        startAutoPlay(); // Reset timer on manual click
+      });
+    });
+
+    // Dot Click
+    dots.forEach((dot) => {
+      dot.addEventListener('click', () => {
+        const targetIdx = parseInt(dot.getAttribute('data-target') || '0', 10);
+        currentIndex = targetIdx;
+        applyPositions(currentIndex);
+        startAutoPlay();
+      });
+    });
+
+    // Hover to Pause
+    stage.addEventListener('mouseenter', stopAutoPlay);
+    stage.addEventListener('mouseleave', startAutoPlay);
+
+    // Initial Start
+    applyPositions(0);
+    startAutoPlay();
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initFocalCarousel);
+  } else {
+    initFocalCarousel();
+  }
+</script>
+
