@@ -1,5 +1,6 @@
 ---
 // InteractiveRateCalculator.astro - Clean Light-Theme Savings Estimator Widget
+import { SITE_CONFIG } from '../config/site';
 ---
 
 <div class="calculator-clean-card" id="rateCalculator">
@@ -56,7 +57,7 @@
       <span class="strip-amount" id="netSavingsDisplay">$8,400.00 / year</span>
       <span class="strip-desc">Plus next-day settlement and multi-gateway uptime protection.</span>
     </div>
-    <a href="#auditForm" class="btn btn-primary calc-cta-btn">
+    <a href={SITE_CONFIG.ctaUrl} target="_blank" rel="noopener noreferrer" class="btn btn-primary calc-cta-btn">
       <span>Claim These Rates →</span>
     </a>
   </div>

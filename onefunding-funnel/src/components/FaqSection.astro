@@ -1,5 +1,6 @@
 ---
 // FaqSection.astro - 2-Column Editorial FAQ with Sticky Decision Anchor & Open-Air Accordion
+import { SITE_CONFIG } from '../config/site';
 ---
 
 <section class="section section-subtle faq-section" id="faq">
@@ -27,7 +28,7 @@
             <p class="action-sub">
               Upload a recent processing statement for an objective, line-by-line rate audit with zero obligation.
             </p>
-            <a href="#auditForm" class="btn btn-primary btn-md faq-cta-btn">
+            <a href={SITE_CONFIG.ctaUrl} target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-md faq-cta-btn">
               <span>Get Free Statement Review →</span>
             </a>
             <div class="faq-trust-tags">

@@ -1,5 +1,6 @@
 ---
 // HeroSection.astro - Clean Light Hero Section (5-Second Rule Compliant)
+import { SITE_CONFIG } from '../config/site';
 ---
 
 <section class="section section-white hero-section" id="hero">
@@ -22,7 +23,7 @@
 
         <!-- Primary CTA & FUD Reduction -->
         <div class="hero-cta-block">
-          <a href="#auditForm" class="btn btn-primary btn-lg hero-cta-btn">
+          <a href={SITE_CONFIG.ctaUrl} target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-lg hero-cta-btn">
             <span>GET MY FREE RATE ANALYSIS →</span>
           </a>
 

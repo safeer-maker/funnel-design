@@ -1,0 +1,216 @@
+---
+// src/pages/terms.astro - Terms of Service Page
+import Layout from '../layouts/Layout.astro';
+import HeaderNav from '../components/HeaderNav.astro';
+import Footer from '../components/Footer.astro';
+import { SITE_CONFIG } from '../config/site';
+
+const lastUpdated = "February 15, 2026";
+---
+
+<Layout
+  title={`Terms of Service | ${SITE_CONFIG.name}`}
+  description="Terms of Service, consulting agreements, and merchant processing conditions for OneFunding LLC / 1 Funding Source."
+>
+  <HeaderNav />
+
+  <main class="legal-page">
+    <div class="container legal-container">
+      <div class="legal-header">
+        <a href="/" class="back-link">← Back to Home</a>
+        <h1 class="legal-title">Terms of Service</h1>
+        <p class="legal-meta">Last Updated: {lastUpdated} · OneFunding LLC</p>
+      </div>
+
+      <div class="legal-content">
+        <section>
+          <h2>1. Agreement to Terms</h2>
+          <p>
+            These Terms of Service ("Terms") constitute a legally binding agreement between you (whether individually or on behalf of an entity, "Merchant" or "you") and OneFunding LLC, operating also as 1 Funding Source ("OneFunding," "we," "us," or "our"). By accessing our website, requesting a rate audit, or utilizing our merchant placement services, you agree to be bound by these Terms.
+          </p>
+        </section>
+
+        <section>
+          <h2>2. Description of Services & Rate Audits</h2>
+          <p>
+            OneFunding provides payment infrastructure consulting, rate audits, interchange optimization, payment gateway configuration, and merchant account placement services.
+          </p>
+          <ul>
+            <li><strong>Free Rate Audits:</strong> Rate reviews and fee savings calculations provided via our online forms or consultative reviews are estimates based on data provided by the Merchant and standard interchange schedules. They do not constitute a formal lending or underwriting guarantee until full underwriting approval is issued.</li>
+            <li><strong>Independent Placement:</strong> OneFunding operates as an Independent Sales Organization (ISO) connecting businesses with acquiring banks and payment gateways. OneFunding is not a bank.</li>
+          </ul>
+        </section>
+
+        <section>
+          <h2>3. Merchant Representations & Eligibility</h2>
+          <p>By submitting information through our landing page or onboarding funnels, you represent and warrant that:</p>
+          <ul>
+            <li>You are authorized to act on behalf of the commercial business entity represented.</li>
+            <li>All volume estimates, business descriptions, and processing statements provided are accurate and truthful.</li>
+            <li>Your business complies with all applicable local, state, and federal laws and card network rules (Visa, Mastercard, Discover, Amex).</li>
+          </ul>
+        </section>
+
+        <section>
+          <h2>4. Pricing, Dual Pricing & Month-to-Month Terms</h2>
+          <p>
+            OneFunding champions transparent merchant pricing structures:
+          </p>
+          <ul>
+            <li><strong>Month-to-Month Agreements:</strong> Standard merchant account agreements arranged by OneFunding are provided on a month-to-month basis with zero long-term cancellation penalties, unless explicitly stated otherwise in specialized custom enterprise contracts.</li>
+            <li><strong>Interchange-Plus Pricing:</strong> Pass-through wholesale interchange fees fluctuate based on card type, assessment fees, and network regulations set directly by Visa/Mastercard.</li>
+            <li><strong>Dual Pricing Programs:</strong> Where applicable, Dual Pricing / Cash Discount programs must comply with card brand surcharge guidelines and state signage disclosure laws.</li>
+          </ul>
+        </section>
+
+        <section>
+          <h2>5. Intellectual Property Rights</h2>
+          <p>
+            All content, graphics, visual layout, interactive savings calculators, and trademarks on this website are the proprietary property of OneFunding LLC or licensed third parties. You may not copy, reverse-engineer, or commercially exploit any proprietary materials without prior written consent.
+          </p>
+        </section>
+
+        <section>
+          <h2>6. Limitation of Liability</h2>
+          <p>
+            To the maximum extent permitted by law, OneFunding LLC and its officers, partners, and agents shall not be liable for any indirect, consequential, punitive, or incidental damages arising out of your use of our site, delays in acquiring bank underwriting decisions, processor network outages, or third-party gateway downtime.
+          </p>
+        </section>
+
+        <section>
+          <h2>7. Contact & Dispute Resolution</h2>
+          <p>These Terms shall be governed by and construed in accordance with the laws of the State of Delaware / United States. For any inquiries regarding these Terms:</p>
+          <div class="legal-contact-card">
+            <p><strong>OneFunding LLC — Legal Department</strong></p>
+            <p>Email: <a href={`mailto:${SITE_CONFIG.email}`}>{SITE_CONFIG.email}</a></p>
+            <p>Phone: <a href={SITE_CONFIG.phone.href}>{SITE_CONFIG.phone.display}</a></p>
+          </div>
+        </section>
+      </div>
+
+      <div class="legal-cta-banner">
+        <h3>Ready to Review Your Merchant Rates?</h3>
+        <p>Get an objective, line-by-line fee audit with zero obligation.</p>
+        <a href={SITE_CONFIG.ctaUrl} target="_blank" rel="noopener noreferrer" class="btn btn-primary">
+          <span>{SITE_CONFIG.ctaText} →</span>
+        </a>
+      </div>
+    </div>
+  </main>
+
+  <Footer />
+</Layout>
+
+<style>
+  .legal-page {
+    padding: 4rem 0 6rem 0;
+    background-color: var(--bg-page);
+    min-height: 80vh;
+  }
+
+  .legal-container {
+    max-width: 820px;
+    margin: 0 auto;
+  }
+
+  .legal-header {
+    margin-bottom: 2.5rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid var(--border-light);
+  }
+
+  .back-link {
+    display: inline-block;
+    font-size: 0.88rem;
+    font-weight: 600;
+    color: var(--emerald-primary);
+    margin-bottom: 1rem;
+    transition: color var(--transition-fast);
+  }
+
+  .back-link:hover {
+    color: var(--emerald-hover);
+  }
+
+  .legal-title {
+    font-size: 2.4rem;
+    color: var(--text-heading);
+    margin-bottom: 0.5rem;
+  }
+
+  .legal-meta {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+  }
+
+  .legal-content {
+    display: flex;
+    flex-direction: column;
+    gap: 2.25rem;
+  }
+
+  .legal-content section {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .legal-content h2 {
+    font-size: 1.35rem;
+    color: var(--text-heading);
+    margin-top: 0.5rem;
+  }
+
+  .legal-content p {
+    font-size: 1rem;
+    line-height: 1.7;
+    color: var(--text-body);
+  }
+
+  .legal-content ul {
+    padding-left: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    color: var(--text-body);
+    font-size: 0.98rem;
+    line-height: 1.65;
+  }
+
+  .legal-contact-card {
+    background: var(--bg-subtle);
+    border: 1px solid var(--border-light);
+    border-left: 3px solid var(--emerald-primary);
+    border-radius: var(--radius-md);
+    padding: 1.25rem;
+    margin-top: 0.5rem;
+  }
+
+  .legal-contact-card a {
+    color: var(--emerald-primary);
+    font-weight: 600;
+  }
+
+  .legal-cta-banner {
+    margin-top: 4rem;
+    background: var(--bg-subtle);
+    border: 1px solid var(--border-light);
+    border-radius: var(--radius-xl);
+    padding: 2.5rem;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.75rem;
+  }
+
+  .legal-cta-banner h3 {
+    font-size: 1.45rem;
+    color: var(--text-heading);
+  }
+
+  .legal-cta-banner p {
+    color: var(--text-muted);
+    margin-bottom: 0.5rem;
+  }
+</style>

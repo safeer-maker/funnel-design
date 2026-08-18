@@ -1,5 +1,6 @@
 ---
 // ProblemSection.astro - Two-Column: Animated Pain Points (Left) + Live Rate Calculator (Right)
+import { SITE_CONFIG } from '../config/site';
 ---
 
 <section class="section section-white problem-section" id="problem">
@@ -169,7 +170,7 @@
             </div>
 
             <!-- CTA -->
-            <a href="#auditForm" class="btn btn-primary btn-full calc-cta-btn">
+            <a href={SITE_CONFIG.ctaUrl} target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-full calc-cta-btn">
               <span>Claim These Rates — Free Audit →</span>
             </a>
 

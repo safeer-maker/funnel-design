@@ -1,0 +1,218 @@
+---
+// src/pages/privacy.astro - Comprehensive Privacy Policy Page
+import Layout from '../layouts/Layout.astro';
+import HeaderNav from '../components/HeaderNav.astro';
+import Footer from '../components/Footer.astro';
+import { SITE_CONFIG } from '../config/site';
+
+const lastUpdated = "February 15, 2026";
+---
+
+<Layout
+  title={`Privacy Policy | ${SITE_CONFIG.name}`}
+  description="Privacy Policy and data protection standards for OneFunding LLC / 1 Funding Source merchant services."
+>
+  <HeaderNav />
+
+  <main class="legal-page">
+    <div class="container legal-container">
+      <div class="legal-header">
+        <a href="/" class="back-link">← Back to Home</a>
+        <h1 class="legal-title">Privacy Policy</h1>
+        <p class="legal-meta">Last Updated: {lastUpdated} · OneFunding LLC</p>
+      </div>
+
+      <div class="legal-content">
+        <section>
+          <h2>1. Introduction & Overview</h2>
+          <p>
+            OneFunding LLC, also operating under the trade name 1 Funding Source ("OneFunding," "we," "us," or "our"), is committed to protecting the privacy and security of your business and personal information. This Privacy Policy outlines how we collect, use, disclose, and safeguard information when you visit our website, apply for merchant payment processing services, submit processing statements for fee audits, or interact with our intake funnels.
+          </p>
+        </section>
+
+        <section>
+          <h2>2. Information We Collect</h2>
+          <p>We collect information that you voluntarily provide to us when expressing interest in our merchant solutions, requesting a rate audit, or applying for an account:</p>
+          <ul>
+            <li><strong>Contact Information:</strong> Full name, business email address, direct phone number, business mailing address, and corporate entity name.</li>
+            <li><strong>Financial & Processing Data:</strong> Estimated monthly transaction volume, average ticket size, current payment processor name, and information contained in merchant statements uploaded for audit purposes.</li>
+            <li><strong>Underwriting Information:</strong> During formal underwriting, additional business verification details, Tax ID / EIN, ownership structure, and banking settlement details required by financial acquiring partners.</li>
+            <li><strong>Automated Device & Usage Data:</strong> IP address, browser type, operating system, referring URLs, and interaction timestamps collected via cookies and standard web analytics to optimize our intake experience.</li>
+          </ul>
+        </section>
+
+        <section>
+          <h2>3. How We Use Your Information</h2>
+          <p>We use the collected information strictly for legitimate commercial business purposes, including:</p>
+          <ul>
+            <li>Conducting customized rate comparisons and statement fee audits.</li>
+            <li>Matching your merchant profile with appropriate acquiring banks, gateways (e.g., NMI, Authorize.Net), and underwriting channels.</li>
+            <li>Facilitating pre-underwriting reviews, risk assessments, and compliance verifications (such as LegitScript certification support).</li>
+            <li>Communicating regarding audit results, onboarding status, and dedicated account support via telephone, email, or SMS.</li>
+            <li>Maintaining regulatory compliance with financial industry standards, Anti-Money Laundering (AML), and Know-Your-Customer (KYC) mandates.</li>
+          </ul>
+        </section>
+
+        <section>
+          <h2>4. Data Sharing & Third-Party Disclosure</h2>
+          <p>
+            <strong>We do not sell, rent, or trade your personal or financial information to third parties for marketing purposes.</strong> We share information only under the following strictly defined circumstances:
+          </p>
+          <ul>
+            <li><strong>Financial Partners & Acquirers:</strong> With our sponsoring banking partners, payment processors, and gateway providers necessary to establish, underwrite, and service your merchant account.</li>
+            <li><strong>Service Providers:</strong> With verified technology providers (such as our CRM, communication platforms, and secure statement audit systems) who are bound by strict non-disclosure and data privacy agreements.</li>
+            <li><strong>Legal & Regulatory Authorities:</strong> When required by applicable federal/state laws, subpoenas, or card network regulations (Visa, Mastercard, American Express, Discover).</li>
+          </ul>
+        </section>
+
+        <section>
+          <h2>5. Data Security & Storage</h2>
+          <p>
+            We implement administrative, technical, and physical safeguards designed to protect merchant data against unauthorized access, loss, or alteration. All statement uploads and digital transmissions are protected by 256-bit Transport Layer Security (TLS) encryption. Merchant records are stored in secure, access-restricted environments compliant with PCI-DSS guidelines.
+          </p>
+        </section>
+
+        <section>
+          <h2>6. Your Privacy Rights & Choices</h2>
+          <p>
+            Depending on your jurisdiction (including under the California Consumer Privacy Act / CCPA), you have the right to request access to the personal data we hold about you, request corrections or deletion of non-regulatory records, and opt-out of marketing communications at any time by contacting us or clicking the unsubscribe link in our communications.
+          </p>
+        </section>
+
+        <section>
+          <h2>7. Contact Information</h2>
+          <p>If you have questions, comments, or data privacy requests regarding this Privacy Policy, please contact our compliance department:</p>
+          <div class="legal-contact-card">
+            <p><strong>OneFunding LLC — Privacy & Compliance</strong></p>
+            <p>Email: <a href={`mailto:${SITE_CONFIG.email}`}>{SITE_CONFIG.email}</a></p>
+            <p>Phone: <a href={SITE_CONFIG.phone.href}>{SITE_CONFIG.phone.display}</a></p>
+          </div>
+        </section>
+      </div>
+
+      <div class="legal-cta-banner">
+        <h3>Ready to Eliminate Hidden Processor Fees?</h3>
+        <p>Get a confidential, line-by-line rate review for your business.</p>
+        <a href={SITE_CONFIG.ctaUrl} target="_blank" rel="noopener noreferrer" class="btn btn-primary">
+          <span>{SITE_CONFIG.ctaText} →</span>
+        </a>
+      </div>
+    </div>
+  </main>
+
+  <Footer />
+</Layout>
+
+<style>
+  .legal-page {
+    padding: 4rem 0 6rem 0;
+    background-color: var(--bg-page);
+    min-height: 80vh;
+  }
+
+  .legal-container {
+    max-width: 820px;
+    margin: 0 auto;
+  }
+
+  .legal-header {
+    margin-bottom: 2.5rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid var(--border-light);
+  }
+
+  .back-link {
+    display: inline-block;
+    font-size: 0.88rem;
+    font-weight: 600;
+    color: var(--emerald-primary);
+    margin-bottom: 1rem;
+    transition: color var(--transition-fast);
+  }
+
+  .back-link:hover {
+    color: var(--emerald-hover);
+  }
+
+  .legal-title {
+    font-size: 2.4rem;
+    color: var(--text-heading);
+    margin-bottom: 0.5rem;
+  }
+
+  .legal-meta {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+  }
+
+  .legal-content {
+    display: flex;
+    flex-direction: column;
+    gap: 2.25rem;
+  }
+
+  .legal-content section {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .legal-content h2 {
+    font-size: 1.35rem;
+    color: var(--text-heading);
+    margin-top: 0.5rem;
+  }
+
+  .legal-content p {
+    font-size: 1rem;
+    line-height: 1.7;
+    color: var(--text-body);
+  }
+
+  .legal-content ul {
+    padding-left: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    color: var(--text-body);
+    font-size: 0.98rem;
+    line-height: 1.65;
+  }
+
+  .legal-contact-card {
+    background: var(--bg-subtle);
+    border: 1px solid var(--border-light);
+    border-left: 3px solid var(--emerald-primary);
+    border-radius: var(--radius-md);
+    padding: 1.25rem;
+    margin-top: 0.5rem;
+  }
+
+  .legal-contact-card a {
+    color: var(--emerald-primary);
+    font-weight: 600;
+  }
+
+  .legal-cta-banner {
+    margin-top: 4rem;
+    background: var(--bg-subtle);
+    border: 1px solid var(--border-light);
+    border-radius: var(--radius-xl);
+    padding: 2.5rem;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.75rem;
+  }
+
+  .legal-cta-banner h3 {
+    font-size: 1.45rem;
+    color: var(--text-heading);
+  }
+
+  .legal-cta-banner p {
+    color: var(--text-muted);
+    margin-bottom: 0.5rem;
+  }
+</style>
