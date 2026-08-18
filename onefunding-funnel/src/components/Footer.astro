@@ -50,36 +50,49 @@
         </ul>
       </div>
 
-      <!-- Col 4: Compliance & Badges -->
+      <!-- Col 4: Industries -->
       <div class="footer-col">
-        <h4 class="footer-col-title">Security & Trust</h4>
-        <div class="footer-badges">
-          <div class="f-badge">🔒 PCI-DSS Level 1 Certified</div>
-          <div class="f-badge">🛡️ LegitScript Certified Partner</div>
-          <div class="f-badge">⚡ 99.9% Uptime Guarantee</div>
-        </div>
+        <h4 class="footer-col-title">Industries</h4>
+        <ul class="footer-links-list">
+          <li><span>Ecommerce &amp; Subscriptions</span></li>
+          <li><span>Retail &amp; Restaurant POS</span></li>
+          <li><span>Contractors &amp; Field Services</span></li>
+          <li><span>Professional &amp; B2B Services</span></li>
+          <li><span>Specialized &amp; High-Volume</span></li>
+        </ul>
       </div>
     </div>
 
-    <!-- Mandatory Legal FinTech Disclaimer -->
-    <div class="footer-legal-box">
-      <p>
-        <strong>Legal & Financial Disclosure:</strong> OneFunding LLC (operating as 1 Funding Source) is a financial technology company and registered independent sales organization (ISO/MSP) representative, not an FDIC-insured banking institution. Credit card processing and merchant acquiring services are provided through our network of member banking partners, registered ISO/MSPs, and gateway partners including NMI, Authorize.Net, USA ePay, and Fluidpay. All brand names, logos, and registered trademarks belong to their respective holders and are used strictly for identification purposes.
-      </p>
-    </div>
-
+    <!-- Clean Bottom Row with Legal Links & Authentic Security Seals -->
     <div class="footer-bottom-row">
-      <p class="copyright-text">
-        © {new Date().getFullYear()} OneFunding LLC / 1 Funding Source. All Rights Reserved.
-      </p>
+      <div class="copyright-group">
+        <p class="copyright-text">
+          © {new Date().getFullYear()} OneFunding LLC / 1 Funding Source. All Rights Reserved.
+        </p>
+        <div class="security-seals-inline">
+          <span class="seal-item">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#059669" stroke-width="2.5">
+              <rect x="3" y="11" width="18" height="11" rx="2" ry="2"/>
+              <path d="M7 11V7a5 5 0 0 1 10 0v4"/>
+            </svg>
+            <span>PCI-DSS Level 1 Validated</span>
+          </span>
+          <span class="seal-sep">•</span>
+          <span class="seal-item">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#0284c7" stroke-width="2.5">
+              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+            </svg>
+            <span>256-Bit TLS Bank Encryption</span>
+          </span>
+        </div>
+      </div>
+
       <div class="legal-links-row">
         <a href="#privacy">Privacy Policy</a>
         <span>·</span>
         <a href="#terms">Terms of Service</a>
         <span>·</span>
-        <a href="#security">PCI Compliance</a>
-        <span>·</span>
-        <a href="#merchant">Merchant Agreement</a>
+        <a href="#security">Security &amp; Compliance</a>
       </div>
     </div>
   </div>
@@ -89,15 +102,15 @@
   .site-footer {
     background: #f8fafc;
     border-top: 1px solid #e2e8f0;
-    padding: 4rem 0 2rem 0;
+    padding: 4.5rem 0 2.5rem 0;
     color: #475569;
   }
 
   .footer-main-grid {
     display: grid;
-    grid-template-columns: 1.6fr 1fr 1fr 1.2fr;
+    grid-template-columns: 1.5fr 1fr 1fr 1fr;
     gap: 3rem;
-    margin-bottom: 3rem;
+    margin-bottom: 3.5rem;
   }
 
   .footer-logo {
@@ -129,14 +142,14 @@
     font-size: 0.9rem;
     line-height: 1.6;
     color: #64748b;
-    margin-bottom: 1.15rem;
+    margin-bottom: 1.25rem;
     max-width: 320px;
   }
 
   .footer-contact-details {
     display: flex;
     flex-direction: column;
-    gap: 0.35rem;
+    gap: 0.4rem;
     font-size: 0.86rem;
     color: #475569;
   }
@@ -146,10 +159,10 @@
   }
 
   .footer-col-title {
-    font-size: 0.9rem;
+    font-size: 0.85rem;
     font-weight: 700;
     color: #0f172a;
-    letter-spacing: 0.04em;
+    letter-spacing: 0.06em;
     text-transform: uppercase;
     margin-bottom: 1.15rem;
   }
@@ -159,74 +172,67 @@
     padding: 0;
     display: flex;
     flex-direction: column;
-    gap: 0.65rem;
+    gap: 0.7rem;
     font-size: 0.88rem;
   }
 
-  .footer-links-list a {
-    color: #475569;
+  .footer-links-list a,
+  .footer-links-list span {
+    color: #64748b;
     transition: color var(--transition-fast);
   }
 
   .footer-links-list a:hover {
-    color: var(--emerald-light);
-  }
-
-  .footer-badges {
-    display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
-  }
-
-  .f-badge {
-    padding: 0.35rem 0.65rem;
-    background: #ffffff;
-    border: 1px solid #e2e8f0;
-    border-radius: var(--radius-sm);
-    font-size: 0.78rem;
-    font-weight: 600;
-    color: #334155;
-  }
-
-  .footer-legal-box {
-    padding: 1.25rem 1.5rem;
-    background: #ffffff;
-    border: 1px solid #e2e8f0;
-    border-radius: var(--radius-md);
-    margin-bottom: 2rem;
-  }
-
-  .footer-legal-box p {
-    font-size: 0.76rem;
-    line-height: 1.6;
-    color: #64748b;
-  }
-
-  .footer-legal-box strong {
-    color: #334155;
+    color: var(--emerald-primary);
   }
 
   .footer-bottom-row {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding-top: 1.25rem;
+    padding-top: 2rem;
     border-top: 1px solid #e2e8f0;
-    font-size: 0.8rem;
+    font-size: 0.82rem;
+    gap: 1.5rem;
+  }
+
+  .copyright-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.35rem;
   }
 
   .copyright-text {
     color: #64748b;
   }
 
+  .security-seals-inline {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    font-size: 0.76rem;
+    font-weight: 600;
+    color: #475569;
+  }
+
+  .seal-item {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+  }
+
+  .seal-sep {
+    color: #cbd5e1;
+  }
+
   .legal-links-row {
     display: flex;
-    gap: 0.5rem;
+    gap: 0.75rem;
     align-items: center;
   }
 
   .legal-links-row a {
-    color: #475569;
+    color: #64748b;
     transition: color var(--transition-fast);
   }
 
@@ -234,10 +240,20 @@
     color: var(--emerald-primary);
   }
 
+  .legal-links-row span {
+    color: #cbd5e1;
+  }
+
   @media (max-width: 900px) {
     .footer-main-grid {
       grid-template-columns: 1fr 1fr;
-      gap: 2rem;
+      gap: 2.5rem;
+    }
+
+    .footer-bottom-row {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 1.25rem;
     }
   }
 
@@ -245,11 +261,6 @@
     .footer-main-grid {
       grid-template-columns: 1fr;
     }
-
-    .footer-bottom-row {
-      flex-direction: column;
-      gap: 0.75rem;
-      text-align: center;
-    }
   }
 </style>
+

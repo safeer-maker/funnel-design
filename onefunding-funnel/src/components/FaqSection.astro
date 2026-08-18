@@ -1,127 +1,288 @@
 ---
-// FaqSection.astro - Clean Light-Theme Objection Handling Accordion
+// FaqSection.astro - 2-Column Editorial FAQ with Sticky Decision Anchor & Open-Air Accordion
 ---
 
 <section class="section section-subtle faq-section" id="faq">
   <div class="container">
-    <div class="section-header-clean">
-      <h2>
-        Everything You Need to Know Before Switching
-      </h2>
-      <p>
-        Straightforward answers to the most common questions high-volume merchants ask about underwriting, rates, and onboarding.
-      </p>
-    </div>
+    <div class="faq-2col-layout">
+      
+      <!-- Left Column: Sticky Decision & Action Anchor -->
+      <div class="faq-anchor-col">
+        <div class="faq-sticky-box">
+          <div class="faq-kicker">
+            <span class="pulse-dot"></span>
+            <span>TRANSPARENT TERMS</span>
+          </div>
 
-    <div class="faq-accordion-container">
-      <!-- FAQ 1 -->
-      <details class="faq-item" open>
-        <summary class="faq-question">
-          <span>Do you support high-risk and regulated industries?</span>
-          <span class="faq-icon">+</span>
-        </summary>
-        <div class="faq-body">
-          <p>
-            Yes. We specialize in LegitScript-certified underwriting for dietary supplements, telehealth, online coaching, recurring subscriptions, CBD, and high-ticket B2B services. Unlike automated aggregators that blindly approve accounts and freeze them later, we pre-underwrite your business model upfront so your processing volume is permanently stable.
-          </p>
-        </div>
-      </details>
+          <h2 class="faq-anchor-title">
+            Everything You Need to Know Before Switching
+          </h2>
 
-      <!-- FAQ 2 -->
-      <details class="faq-item">
-        <summary class="faq-question">
-          <span>Is there a long-term contract or cancellation penalty?</span>
-          <span class="faq-icon">+</span>
-        </summary>
-        <div class="faq-body">
-          <p>
-            No. We operate strictly on a month-to-month basis. There are zero cancellation fees, zero lock-in agreements, and zero termination penalties. We believe in continuously earning your business every month through lower rates, reliable uptime, and dedicated human support.
+          <p class="faq-anchor-desc">
+            No hidden contract clauses, no automated runaround. We believe in clear terms, wholesale pricing, and direct human accountability from day one.
           </p>
-        </div>
-      </details>
 
-      <!-- FAQ 3 -->
-      <details class="faq-item">
-        <summary class="faq-question">
-          <span>How long does approval and account activation take?</span>
-          <span class="faq-icon">+</span>
-        </summary>
-        <div class="faq-body">
-          <p>
-            Most merchant accounts are custom-underwritten and approved within <strong>24 to 48 hours</strong>. Once approved, our onboarding specialists assist with your gateway API credentials or software integrations so you can begin processing within the same week.
-          </p>
+          <div class="faq-action-card">
+            <h3 class="action-heading">Ready to see your real savings?</h3>
+            <p class="action-sub">
+              Upload a recent processing statement for an objective, line-by-line rate audit with zero obligation.
+            </p>
+            <a href="#auditForm" class="btn btn-primary btn-md faq-cta-btn">
+              <span>Get Free Statement Review →</span>
+            </a>
+            <div class="faq-trust-tags">
+              <span>🔒 100% Confidential</span>
+              <span>⚡ 24–48h Approvals</span>
+              <span>🛡️ 0 Interruption</span>
+            </div>
+          </div>
         </div>
-      </details>
+      </div>
 
-      <!-- FAQ 4 -->
-      <details class="faq-item">
-        <summary class="faq-question">
-          <span>Will switching processors disrupt my active store or sales?</span>
-          <span class="faq-icon">+</span>
-        </summary>
-        <div class="faq-body">
-          <p>
-            Zero disruption. Your existing processing account stays 100% active while we configure and test your new gateway routing in the background. We only transition customer traffic once your new account is live and fully verified.
-          </p>
-        </div>
-      </details>
+      <!-- Right Column: Open-Air Hairline Accordion -->
+      <div class="faq-content-col">
+        <div class="faq-hairline-list">
 
-      <!-- FAQ 5 -->
-      <details class="faq-item">
-        <summary class="faq-question">
-          <span>What information is needed for the free Rate Analysis?</span>
-          <span class="faq-icon">+</span>
-        </summary>
-        <div class="faq-body">
-          <p>
-            Just your basic monthly card volume and your most recent merchant processing statement. Our team performs an itemized, line-by-line fee comparison showing exactly how much cash you will save each month under Interchange-Plus pricing.
-          </p>
-        </div>
-      </details>
+          <!-- FAQ 1 -->
+          <details class="faq-item" open>
+            <summary class="faq-question">
+              <span>Are there any long-term contracts, lease locks, or cancellation penalties?</span>
+              <span class="faq-chevron" aria-hidden="true">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                  <polyline points="6 9 12 15 18 9"></polyline>
+                </svg>
+              </span>
+            </summary>
+            <div class="faq-answer">
+              <p>
+                <strong>None.</strong> We operate strictly on a month-to-month basis with zero cancellation fees, zero long-term equipment lock-ins, and zero termination penalties. We believe in continuously earning your business every month through transparent pricing, superior uptime, and dedicated human support.
+              </p>
+            </div>
+          </details>
 
-      <!-- FAQ 6 -->
-      <details class="faq-item">
-        <summary class="faq-question">
-          <span>How does Multi-Gateway failover protect my revenue?</span>
-          <span class="faq-icon">+</span>
-        </summary>
-        <div class="faq-body">
-          <p>
-            OneFunding connects your checkout to redundant gateway pipelines (including NMI, Authorize.Net, and Fluidpay). If one network route experiences unexpected bank downtime or processing lag, transactions automatically route to a secondary gateway in milliseconds without your customers noticing.
-          </p>
+          <!-- FAQ 2 -->
+          <details class="faq-item">
+            <summary class="faq-question">
+              <span>What is the difference between Dual Pricing and Interchange-Plus?</span>
+              <span class="faq-chevron" aria-hidden="true">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                  <polyline points="6 9 12 15 18 9"></polyline>
+                </svg>
+              </span>
+            </summary>
+            <div class="faq-answer">
+              <p>
+                <strong>Dual Pricing</strong> allows a business to offset up to 100% of card processing expenses by presenting clear cash and card prices at checkout. <strong>Interchange-Plus</strong> passes through true wholesale Visa/Mastercard interchange rates plus a small, fixed transparent markup—ideal for established merchants and B2B businesses wanting complete cost transparency.
+              </p>
+            </div>
+          </details>
+
+          <!-- FAQ 3 -->
+          <details class="faq-item">
+            <summary class="faq-question">
+              <span>Will switching processors disrupt my active store or sales?</span>
+              <span class="faq-chevron" aria-hidden="true">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                  <polyline points="6 9 12 15 18 9"></polyline>
+                </svg>
+              </span>
+            </summary>
+            <div class="faq-answer">
+              <p>
+                <strong>Guaranteed zero downtime.</strong> Your existing processor stays 100% active while our onboarding team configures and verifies your new account and hardware in the background. You only switch over once everything is fully tested, ensuring your customers never experience a second of payment delay.
+              </p>
+            </div>
+          </details>
+
+          <!-- FAQ 4 -->
+          <details class="faq-item">
+            <summary class="faq-question">
+              <span>How fast do customer payments settle into my business bank account?</span>
+              <span class="faq-chevron" aria-hidden="true">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                  <polyline points="6 9 12 15 18 9"></polyline>
+                </svg>
+              </span>
+            </summary>
+            <div class="faq-answer">
+              <p>
+                All daily transaction batches settle via <strong>next-business-day direct deposits</strong> directly into your existing business checking account. There are no arbitrary holding periods or unnecessary payout delays.
+              </p>
+            </div>
+          </details>
+
+          <!-- FAQ 5 -->
+          <details class="faq-item">
+            <summary class="faq-question">
+              <span>What payment hardware and software systems do you support?</span>
+              <span class="faq-chevron" aria-hidden="true">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                  <polyline points="6 9 12 15 18 9"></polyline>
+                </svg>
+              </span>
+            </summary>
+            <div class="faq-answer">
+              <p>
+                We support modern Smart POS terminals (Pax, Clover, Dejavoo), Tap to Pay on iPhone and Android, browser-based Virtual Terminals, and direct software integrations with QuickBooks, Shopify, WooCommerce, NMI, Authorize.Net, and custom APIs.
+              </p>
+            </div>
+          </details>
+
+          <!-- FAQ 6 -->
+          <details class="faq-item">
+            <summary class="faq-question">
+              <span>What if my current merchant processing rates are already competitive?</span>
+              <span class="faq-chevron" aria-hidden="true">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                  <polyline points="6 9 12 15 18 9"></polyline>
+                </svg>
+              </span>
+            </summary>
+            <div class="faq-answer">
+              <p>
+                <strong>We will tell you honestly.</strong> Our statement review is an objective, line-by-line audit. If your existing setup is already optimal and you are receiving fair wholesale pricing, we will confirm it for your peace of mind with zero pressure to switch.
+              </p>
+            </div>
+          </details>
+
         </div>
-      </details>
+      </div>
+
     </div>
   </div>
 </section>
 
 <style>
-  .faq-accordion-container {
-    max-width: 820px;
-    margin: 0 auto;
+  /* ==========================================================================
+     2-COLUMN OPEN-AIR FAQ SECTION (CONCEPT 1)
+     ========================================================================== */
+
+  .faq-section {
+    padding: 6.5rem 0;
+    background-color: var(--bg-page);
+    border-top: 1px solid var(--border-light);
+  }
+
+  .faq-2col-layout {
+    display: grid;
+    grid-template-columns: 1fr 1.35fr;
+    gap: 4.5rem;
+    align-items: flex-start;
+  }
+
+  /* Left Column: Sticky Anchor */
+  .faq-anchor-col {
+    position: sticky;
+    top: 6rem;
+  }
+
+  .faq-sticky-box {
     display: flex;
     flex-direction: column;
-    gap: 0.85rem;
+    align-items: flex-start;
+  }
+
+  .faq-kicker {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.35rem 0.85rem;
+    background: #f1f5f9;
+    border: 1px solid var(--border-light);
+    border-radius: var(--radius-full);
+    font-family: var(--font-display);
+    font-size: 0.74rem;
+    font-weight: 800;
+    letter-spacing: 0.08em;
+    color: var(--text-heading);
+    margin-bottom: 1.25rem;
+  }
+
+  .pulse-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: var(--emerald-primary);
+    box-shadow: 0 0 0 3px rgba(5, 150, 105, 0.2);
+  }
+
+  .faq-anchor-title {
+    font-size: 2.15rem;
+    font-weight: 800;
+    line-height: 1.25;
+    color: var(--text-heading);
+    margin-bottom: 1rem;
+    letter-spacing: -0.02em;
+  }
+
+  .faq-anchor-desc {
+    font-size: 1rem;
+    line-height: 1.65;
+    color: var(--text-body);
+    margin-bottom: 2rem;
+  }
+
+  /* Left Column: Compact Action Card */
+  .faq-action-card {
+    width: 100%;
+    background: #ffffff;
+    border: 1px solid var(--border-light);
+    border-left: 3px solid var(--emerald-primary);
+    border-radius: 16px;
+    padding: 1.75rem;
+    box-shadow: 0 4px 16px rgba(15, 23, 42, 0.04);
+  }
+
+  .action-heading {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--text-heading);
+    margin-bottom: 0.4rem;
+  }
+
+  .action-sub {
+    font-size: 0.88rem;
+    line-height: 1.5;
+    color: var(--text-muted);
+    margin-bottom: 1.25rem;
+  }
+
+  .faq-cta-btn {
+    width: 100%;
+    justify-content: center;
+    margin-bottom: 1rem;
+  }
+
+  .faq-trust-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    font-size: 0.76rem;
+    font-weight: 600;
+    color: var(--text-muted);
+  }
+
+  /* Right Column: Open-Air Hairline Accordion */
+  .faq-hairline-list {
+    display: flex;
+    flex-direction: column;
   }
 
   .faq-item {
-    background: #ffffff;
-    border: 1px solid var(--border-light);
-    border-radius: var(--radius-md);
-    overflow: hidden;
-    transition: all var(--transition-fast);
+    border-bottom: 1px solid var(--border-light);
+    transition: background-color var(--transition-fast);
   }
 
-  .faq-item[open] {
-    border-color: var(--emerald-border);
-    box-shadow: var(--shadow-sm);
+  .faq-item:first-of-type {
+    border-top: 1px solid var(--border-light);
   }
 
   .faq-question {
-    padding: 1.25rem 1.5rem;
+    padding: 1.35rem 0.5rem;
     display: flex;
     align-items: center;
     justify-content: space-between;
+    gap: 1.5rem;
     font-family: var(--font-display);
     font-size: 1.05rem;
     font-weight: 700;
@@ -129,32 +290,65 @@
     cursor: pointer;
     list-style: none;
     user-select: none;
+    transition: color var(--transition-fast);
   }
 
   .faq-question::-webkit-details-marker {
     display: none;
   }
 
-  .faq-icon {
-    font-size: 1.35rem;
+  .faq-question:hover {
     color: var(--emerald-primary);
-    transition: transform var(--transition-fast);
-    line-height: 1;
-    font-weight: 600;
   }
 
-  .faq-item[open] .faq-icon {
-    transform: rotate(45deg);
+  .faq-chevron {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-muted);
+    transition: transform 0.25s ease, color 0.25s ease;
+    flex-shrink: 0;
   }
 
-  .faq-body {
-    padding: 0 1.5rem 1.35rem 1.5rem;
+  .faq-item[open] .faq-question {
+    color: var(--emerald-primary);
+  }
+
+  .faq-item[open] .faq-chevron {
+    transform: rotate(180deg);
+    color: var(--emerald-primary);
+  }
+
+  .faq-answer {
+    padding: 0 0.5rem 1.5rem 0.5rem;
     color: var(--text-body);
     font-size: 0.95rem;
-    line-height: 1.65;
+    line-height: 1.7;
   }
 
-  .faq-body strong {
+  .faq-answer strong {
     color: var(--text-heading);
+    font-weight: 700;
+  }
+
+  /* Responsive Adjustments */
+  @media (max-width: 960px) {
+    .faq-section {
+      padding: 4.5rem 0;
+    }
+
+    .faq-2col-layout {
+      grid-template-columns: 1fr;
+      gap: 3rem;
+    }
+
+    .faq-anchor-col {
+      position: static;
+    }
+
+    .faq-anchor-title {
+      font-size: 1.85rem;
+    }
   }
 </style>
+
