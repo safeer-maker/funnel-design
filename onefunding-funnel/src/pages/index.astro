@@ -10,8 +10,6 @@ import SolutionSection from '../components/SolutionSection.astro';
 import HowItWorksSection from '../components/HowItWorksSection.astro';
 import SocialProofSection from '../components/SocialProofSection.astro';
 import FaqSection from '../components/FaqSection.astro';
-import CloserSection from '../components/CloserSection.astro';
-import ModalAudit from '../components/ModalAudit.astro';
 import Footer from '../components/Footer.astro';
 ---
 
@@ -32,8 +30,12 @@ import Footer from '../components/Footer.astro';
     <!-- Section 3: The Problem (PAS Step 1) -->
     <ProblemSection />
 
+    <div class="divider-beam-glow" aria-hidden="true"></div>
+
     <!-- Section 4: Agitation (PAS Step 2 - Cost of Inaction) -->
     <AgitationSection />
+
+    <div class="divider-slash-tilted" aria-hidden="true"></div>
 
     <!-- Section 5: The Paradigm Shift (PAS Step 3 - Light Tone Pivot & Savings Calculator) -->
     <SolutionSection />
@@ -44,15 +46,11 @@ import Footer from '../components/Footer.astro';
     <!-- Section 7: Deep-Dive Social Proof & Case Studies (No Carousels) -->
     <SocialProofSection />
 
+    <div class="divider-diamond-anchor" aria-hidden="true"></div>
+
     <!-- Section 8: Objection Demolition & Decision FAQ -->
     <FaqSection />
-
-    <!-- Section 9: The Closer & Lead Analysis Hub -->
-    <CloserSection />
   </main>
-
-  <!-- Global Fast Action Popup Modal -->
-  <ModalAudit />
 
   <!-- Global Footer & Compliance -->
   <Footer />

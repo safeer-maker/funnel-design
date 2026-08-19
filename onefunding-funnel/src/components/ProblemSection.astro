@@ -113,7 +113,7 @@ import { SITE_CONFIG } from '../config/site';
 
             <div class="calc-header">
               <div class="calc-badge">
-                <span class="pulse-dot-green"></span>
+                <span class="pulse-dot-indigo"></span>
                 <span>LIVE SAVINGS CALCULATOR</span>
               </div>
               <h3 class="calc-title">How Much Are You Overpaying Right Now?</h3>
@@ -149,13 +149,13 @@ import { SITE_CONFIG } from '../config/site';
             <!-- Comparison Columns -->
             <div class="calc-comparison-grid">
               <div class="calc-box box-traditional">
-                <div class="box-tag text-amber">FLAT RATE (3.5%)</div>
+                <div class="box-tag text-rose">FLAT RATE (3.5%)</div>
                 <div class="box-num text-dark" id="flatFeeDisplay">$1,750 / mo</div>
                 <div class="box-sub" id="flatAnnualDisplay">$21,000 / year in fees</div>
               </div>
               <div class="calc-box box-onefunding">
-                <div class="box-tag text-emerald">ONEFUNDING (Interchange+)</div>
-                <div class="box-num text-emerald" id="onefundingFeeDisplay">$1,050 / mo</div>
+                <div class="box-tag text-mint">ONEFUNDING (Interchange+)</div>
+                <div class="box-num text-mint" id="onefundingFeeDisplay">$1,050 / mo</div>
                 <div class="box-sub" id="onefundingAnnualDisplay">$12,600 / year in fees</div>
               </div>
             </div>
@@ -224,8 +224,8 @@ import { SITE_CONFIG } from '../config/site';
     font-size: 2.5rem;
     font-weight: 800;
     line-height: 1;
-    color: #959504ff;
-    opacity: 0.5;
+    color: var(--indigo-primary);
+    opacity: 0.35;
     letter-spacing: -0.03em;
     flex-shrink: 0;
     width: 48px;
@@ -284,13 +284,13 @@ import { SITE_CONFIG } from '../config/site';
     font-family: var(--font-display);
     font-size: 0.8rem;
     font-weight: 700;
-    color: var(--emerald-primary);
+    color: var(--indigo-primary);
     cursor: pointer;
     transition: color var(--transition-fast);
   }
 
   .pain-toggle-btn:hover {
-    color: var(--emerald-hover);
+    color: var(--indigo-hover);
   }
 
   .toggle-icon {
@@ -301,8 +301,9 @@ import { SITE_CONFIG } from '../config/site';
     transform: rotate(180deg);
   }
 
-  .text-amber { color: #b45309; }
-  .text-indigo { color: #4338ca; }
+  .text-rose { color: var(--rose-primary); }
+  .text-mint { color: var(--mint-primary); }
+  .text-indigo { color: var(--indigo-primary); }
   .text-dark { color: #0f172a; }
 
   .pain-divider {
@@ -343,10 +344,10 @@ import { SITE_CONFIG } from '../config/site';
     align-items: center;
     gap: 0.45rem;
     padding: 0.3rem 0.8rem;
-    background: var(--emerald-bg);
-    border: 1px solid var(--emerald-border);
+    background: var(--indigo-bg);
+    border: 1px solid var(--indigo-border);
     border-radius: var(--radius-full);
-    color: var(--emerald-primary);
+    color: var(--indigo-primary);
     font-size: 0.74rem;
     font-weight: 700;
     letter-spacing: 0.04em;
@@ -401,7 +402,7 @@ import { SITE_CONFIG } from '../config/site';
     width: 100%;
     height: 8px;
     border-radius: 4px;
-    background: linear-gradient(to right, var(--emerald-primary) 10%, #e2e8f0 10%);
+    background: linear-gradient(to right, var(--indigo-primary) 10%, #e2e8f0 10%);
     outline: none;
     cursor: pointer;
     transition: background 0.1s ease;
@@ -413,9 +414,9 @@ import { SITE_CONFIG } from '../config/site';
     width: 22px;
     height: 22px;
     border-radius: 50%;
-    background: var(--emerald-primary);
+    background: var(--indigo-primary);
     cursor: pointer;
-    box-shadow: 0 2px 8px rgba(5, 150, 105, 0.45);
+    box-shadow: 0 2px 8px rgba(79, 70, 229, 0.45);
     border: 2px solid #ffffff;
     transition: transform 0.15s ease, box-shadow 0.15s ease;
   }
@@ -423,7 +424,7 @@ import { SITE_CONFIG } from '../config/site';
   .volume-slider-input::-webkit-slider-thumb:hover,
   .volume-slider-input:active::-webkit-slider-thumb {
     transform: scale(1.2);
-    box-shadow: 0 4px 14px rgba(5, 150, 105, 0.55);
+    box-shadow: 0 4px 14px rgba(79, 70, 229, 0.55);
   }
 
   .slider-markers {
@@ -446,7 +447,7 @@ import { SITE_CONFIG } from '../config/site';
   }
 
   .slider-markers .marker:hover {
-    color: var(--emerald-primary);
+    color: var(--indigo-primary);
   }
 
   /* Comparison Grid */
@@ -466,12 +467,13 @@ import { SITE_CONFIG } from '../config/site';
   }
 
   .box-traditional {
-    background: var(--bg-subtle);
+    background: var(--rose-bg);
+    border-color: var(--rose-border);
   }
 
   .box-onefunding {
-    background: var(--emerald-bg);
-    border-color: var(--emerald-border);
+    background: var(--mint-bg);
+    border-color: var(--mint-border);
   }
 
   .box-tag {

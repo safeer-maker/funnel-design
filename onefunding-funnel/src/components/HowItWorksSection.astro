@@ -40,7 +40,7 @@ import { SITE_CONFIG } from '../config/site';
         </div>
 
         <div class="text-col">
-          <span class="phase-label text-cyan">DISCOVERY &amp; AUDIT</span>
+          <span class="phase-label text-indigo">DISCOVERY &amp; AUDIT</span>
           <h3 class="row-title">
             We Review Your Numbers &amp; Uncover Hidden Processor Markups
           </h3>
@@ -49,11 +49,11 @@ import { SITE_CONFIG } from '../config/site';
           </p>
           <div class="key-points">
             <div class="point-item">
-              <span class="point-check check-cyan">✓</span>
+              <span class="point-check check-indigo">✓</span>
               <span><strong>Itemized Breakdown:</strong> Clear side-by-side comparison with your current setup.</span>
             </div>
             <div class="point-item">
-              <span class="point-check check-cyan">✓</span>
+              <span class="point-check check-indigo">✓</span>
               <span><strong>No-Pressure Guarantee:</strong> If your current rates are already competitive, we will tell you.</span>
             </div>
           </div>
@@ -122,7 +122,7 @@ import { SITE_CONFIG } from '../config/site';
         </div>
 
         <div class="text-col">
-          <span class="phase-label text-emerald">ZERO-DOWNTIME GO LIVE</span>
+          <span class="phase-label text-mint">ZERO-DOWNTIME GO LIVE</span>
           <h3 class="row-title">
             Go Live Seamlessly with Guaranteed Zero Payment Disruption
           </h3>
@@ -131,11 +131,11 @@ import { SITE_CONFIG } from '../config/site';
           </p>
           <div class="key-points">
             <div class="point-item">
-              <span class="point-check check-emerald">✓</span>
+              <span class="point-check check-mint">✓</span>
               <span><strong>Zero Interruption:</strong> Your customers never notice a switch; transactions process without a pause.</span>
             </div>
             <div class="point-item">
-              <span class="point-check check-emerald">✓</span>
+              <span class="point-check check-mint">✓</span>
               <span><strong>Dedicated US Support:</strong> Direct line to a real human account manager whenever you need help.</span>
             </div>
           </div>
@@ -331,9 +331,8 @@ import { SITE_CONFIG } from '../config/site';
     border-radius: 50%;
   }
 
-  .dot-cyan { background: var(--cyan-primary); }
   .dot-indigo { background: var(--indigo-primary); }
-  .dot-emerald { background: var(--emerald-primary); }
+  .dot-mint   { background: var(--mint-primary); }
 
   /* Text Column Styles */
   .phase-label {
@@ -345,9 +344,8 @@ import { SITE_CONFIG } from '../config/site';
     margin-bottom: 0.75rem;
   }
 
-  .text-cyan { color: var(--cyan-primary); }
   .text-indigo { color: var(--indigo-primary); }
-  .text-emerald { color: var(--emerald-primary); }
+  .text-mint   { color: var(--mint-primary); }
 
   .row-title {
     font-size: 1.55rem;
@@ -394,34 +392,30 @@ import { SITE_CONFIG } from '../config/site';
     margin-top: 2px;
   }
 
-  .check-cyan {
-    background: var(--cyan-bg);
-    color: var(--cyan-primary);
-  }
-
   .check-indigo {
     background: var(--indigo-bg);
     color: var(--indigo-primary);
   }
 
-  .check-emerald {
-    background: var(--emerald-bg);
-    color: var(--emerald-primary);
+  .check-mint {
+    background: var(--mint-bg);
+    color: var(--mint-primary);
   }
 
   /* Cross-Diagonal Intersecting Dividers */
   .cross-slash-divider {
     position: relative;
-    height: 1px;
+    height: 16px;
     display: flex;
     align-items: center;
     justify-content: center;
+    overflow: hidden;
   }
 
   .slash-line {
     width: 100%;
-    height: 1px;
-    background: linear-gradient(90deg, transparent 0%, var(--border-light) 50%, transparent 100%);
+    height: 1.5px;
+    background: linear-gradient(90deg, transparent 0%, rgba(79, 70, 229, 0.3) 30%, rgba(5, 150, 105, 0.3) 70%, transparent 100%);
   }
 
   .slash-right .slash-line {
