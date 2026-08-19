@@ -1,12 +1,14 @@
 ---
+import '../styles/global.css';
+
 interface Props {
   title?: string;
   description?: string;
 }
 
 const {
-  title = "OneFunding — Next-Gen Merchant Processing & Zero-Downtime Payments",
-  description = "Stop funding Stripe's growth. OneFunding provides Interchange-Plus rates, next-day cash deposits, and multi-gateway underwriting that never gets shut down."
+  title = "1 Funding Source — Next-Gen Merchant Processing & Zero-Downtime Payments",
+  description = "Stop overpaying on merchant processing fees. 1 Funding Source provides Interchange-Plus wholesale rates, Dual Pricing, smart POS, and dedicated payment support."
 } = Astro.props;
 ---
 
@@ -23,7 +25,7 @@ const {
     <meta property="og:type" content="website" />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
-    <meta property="og:image" content="/images/hero_dashboard.jpg" />
+    <meta property="og:image" content="/1funding-logo-blue.png" />
     <meta name="twitter:card" content="summary_large_image" />
 
     <!-- Google Fonts -->
@@ -32,9 +34,7 @@ const {
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Outfit:wght@500;600;700;800;900&display=swap" rel="stylesheet" />
 
     <!-- Favicon -->
-    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%2310b981'><path d='M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5'/></svg>" />
-
-    <link rel="stylesheet" href="/src/styles/global.css" />
+    <link rel="icon" type="image/png" href="/1funding-logo-blue.png" />
   </head>
   <body>
     <div class="ambient-glow"></div>

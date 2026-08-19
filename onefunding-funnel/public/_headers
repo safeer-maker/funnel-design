@@ -1,0 +1,21 @@
+# Cloudflare Edge Response Headers & Cache Configuration
+
+# 1. Global Security & Performance Headers for all HTML pages
+/*
+  X-Frame-Options: SAMEORIGIN
+  X-Content-Type-Options: nosniff
+  X-XSS-Protection: 1; mode=block
+  Referrer-Policy: strict-origin-when-cross-origin
+  Permissions-Policy: camera=(), microphone=(), geolocation=()
+  Cache-Control: public, max-age=0, must-revalidate
+
+# 2. Immutable Long-Term Caching for Fingerprinted Astro Build Assets
+/_astro/*
+  Cache-Control: public, max-age=31536000, immutable
+
+# 3. High-Performance Caching for Static Images & Media Assets
+/images/*
+  Cache-Control: public, max-age=2592000, stale-while-revalidate=86400
+
+/1funding-logo-blue.png
+  Cache-Control: public, max-age=2592000, stale-while-revalidate=86400

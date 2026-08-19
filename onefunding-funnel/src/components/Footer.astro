@@ -8,21 +8,14 @@ import { SITE_CONFIG } from '../config/site';
     <div class="footer-main-grid" data-flow-stagger>
       <!-- Col 1: Brand & Contact -->
       <div class="footer-brand-col">
-        <div class="footer-logo">
-          <div class="logo-icon-small">
-            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="#059669" stroke-width="2.4">
-              <polygon points="12 2 2 7 12 12 22 7 12 2"></polygon>
-              <polyline points="2 17 12 22 22 17"></polyline>
-              <polyline points="2 12 12 17 22 12"></polyline>
-            </svg>
-          </div>
-          <span class="brand-text">ONEFUNDING LLC</span>
-        </div>
+        <a href="/" class="footer-logo" aria-label="1 Funding Source Home">
+          <img src="/1funding-logo-blue.png" alt="1 Funding Source Logo" class="footer-logo-img" width="200" height="60" />
+        </a>
         <p class="footer-tagline">
-          Enterprise payment orchestration, high-risk underwriting, and Interchange-Plus pricing for scaling merchants.
+          Merchant services and payment technology for businesses that accept cards in-store, online and on the go.
         </p>
         <div class="footer-contact-details">
-          <div>📞 <a href={SITE_CONFIG.phone.href} class="footer-contact-link"><strong>{SITE_CONFIG.phone.display}</strong></a> (24/7 Dedicated Support)</div>
+          <div>📞 <a href={SITE_CONFIG.phone.href} class="footer-contact-link"><strong>{SITE_CONFIG.phone.display}</strong></a></div>
           <div>✉️ <a href={`mailto:${SITE_CONFIG.email}`} class="footer-contact-link"><strong>{SITE_CONFIG.email}</strong></a></div>
         </div>
       </div>
@@ -122,28 +115,21 @@ import { SITE_CONFIG } from '../config/site';
   }
 
   .footer-logo {
-    display: flex;
+    display: inline-flex;
     align-items: center;
-    gap: 0.6rem;
     margin-bottom: 0.85rem;
+    transition: opacity var(--transition-fast);
   }
 
-  .logo-icon-small {
-    width: 30px;
-    height: 30px;
-    background: var(--indigo-bg);
-    border: 1px solid var(--indigo-border);
-    border-radius: 6px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  .footer-logo:hover {
+    opacity: 0.9;
   }
 
-  .brand-text {
-    font-family: var(--font-display);
-    font-size: 1.1rem;
-    font-weight: 800;
-    color: #0f172a;
+  .footer-logo-img {
+    height: 52px;
+    width: auto;
+    object-fit: contain;
+    display: block;
   }
 
   .footer-tagline {

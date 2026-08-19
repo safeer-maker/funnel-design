@@ -19,14 +19,14 @@ const lastUpdated = "February 15, 2026";
       <div class="legal-header">
         <a href="/" class="back-link">← Back to Home</a>
         <h1 class="legal-title">Terms of Service</h1>
-        <p class="legal-meta">Last Updated: {lastUpdated} · OneFunding LLC</p>
+        <p class="legal-meta">Last Updated: {lastUpdated} · {SITE_CONFIG.legalName}</p>
       </div>
 
       <div class="legal-content">
         <section>
           <h2>1. Agreement to Terms</h2>
           <p>
-            These Terms of Service ("Terms") constitute a legally binding agreement between you (whether individually or on behalf of an entity, "Merchant" or "you") and OneFunding LLC, operating also as 1 Funding Source ("OneFunding," "we," "us," or "our"). By accessing our website, requesting a rate audit, or utilizing our merchant placement services, you agree to be bound by these Terms.
+            These Terms of Service ("Terms") constitute a legally binding agreement between you (whether individually or on behalf of an entity, "Merchant" or "you") and 1 Funding Source LLC ("1 Funding Source," "we," "us," or "our"). By accessing our website, requesting a rate audit, or utilizing our merchant services, you agree to be bound by these Terms.
           </p>
         </section>
 
@@ -81,7 +81,7 @@ const lastUpdated = "February 15, 2026";
           <h2>7. Contact & Dispute Resolution</h2>
           <p>These Terms shall be governed by and construed in accordance with the laws of the State of Delaware / United States. For any inquiries regarding these Terms:</p>
           <div class="legal-contact-card">
-            <p><strong>OneFunding LLC — Legal Department</strong></p>
+            <p><strong>{SITE_CONFIG.legalName} — Legal Department</strong></p>
             <p>Email: <a href={`mailto:${SITE_CONFIG.email}`}>{SITE_CONFIG.email}</a></p>
             <p>Phone: <a href={SITE_CONFIG.phone.href}>{SITE_CONFIG.phone.display}</a></p>
           </div>

@@ -6,7 +6,8 @@
     "dev": "astro dev --host",
     "start": "astro dev",
     "build": "astro build",
-    "preview": "astro preview"
+    "preview": "astro preview",
+    "deploy": "astro build && wrangler deploy"
   },
   "dependencies": {
     "astro": "^7.2.3"

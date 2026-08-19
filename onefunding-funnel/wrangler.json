@@ -1,0 +1,9 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "onefunding-funnel",
+  "compatibility_date": "2026-02-15",
+  "assets": {
+    "directory": "./dist",
+    "binding": "ASSETS"
+  }
+}

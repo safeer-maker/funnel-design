@@ -5,8 +5,8 @@ import { SITE_CONFIG } from '../config/site';
 
 <header class="header-nav" id="headerNav">
   <div class="container nav-container">
-    <a href="/" class="brand-logo" aria-label="OneFunding Home">
-      <img src="/1funding-logo-blue.png" alt="OneFunding Logo" class="brand-logo-img" width="160" height="auto" />
+    <a href="/" class="brand-logo" aria-label="1 Funding Source Home">
+      <img src="/1funding-logo-blue.png" alt="1 Funding Source Logo" class="brand-logo-img" width="160" height="auto" />
     </a>
 
     <div class="nav-actions">
@@ -47,12 +47,30 @@ import { SITE_CONFIG } from '../config/site';
   .brand-logo {
     display: flex;
     align-items: center;
+    transition: transform var(--transition-fast);
+  }
+
+  .brand-logo:hover {
+    transform: translateY(-1px);
   }
 
   .brand-logo-img {
-    height: 40px;
+    height: 58px;
     width: auto;
     object-fit: contain;
+    display: block;
+  }
+
+  @media (min-width: 768px) {
+    .brand-logo-img {
+      height: 72px;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .brand-logo-img {
+      height: 78px;
+    }
   }
 
   .nav-trust-pill {
@@ -80,10 +98,10 @@ import { SITE_CONFIG } from '../config/site';
   .phone-link {
     display: flex;
     align-items: center;
-    gap: 0.4rem;
-    font-size: 0.9rem;
-    font-weight: 600;
-    color: var(--text-body);
+    gap: 0.45rem;
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: var(--text-heading);
     transition: color var(--transition-fast);
   }
 
@@ -92,9 +110,10 @@ import { SITE_CONFIG } from '../config/site';
   }
 
   .nav-cta {
-    padding: 0.55rem 1.15rem;
-    font-size: 0.88rem;
-    border-radius: var(--radius-sm);
+    padding: 0.65rem 1.35rem;
+    font-size: 0.92rem;
+    font-weight: 600;
+    border-radius: var(--radius-md);
   }
 
   @media (max-width: 768px) {
