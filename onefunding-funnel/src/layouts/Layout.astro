@@ -39,5 +39,54 @@ const {
   <body>
     <div class="ambient-glow"></div>
     <slot />
+
+    <!-- Global High-Performance Text & Section Flow-In Observer Engine -->
+    <script>
+      function initFlowAnimations() {
+        const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+        const flowElements = document.querySelectorAll<HTMLElement>('[data-flow], [data-flow-stagger]');
+
+        if (!flowElements.length) return;
+
+        if (prefersReducedMotion) {
+          flowElements.forEach((el) => el.classList.add('is-revealed'));
+          return;
+        }
+
+        const observer = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                entry.target.classList.add('is-revealed');
+                observer.unobserve(entry.target);
+              }
+            });
+          },
+          {
+            threshold: 0.12,
+            rootMargin: '0px 0px -30px 0px'
+          }
+        );
+
+        flowElements.forEach((el) => {
+          // Immediately reveal elements already visible in initial viewport
+          const rect = el.getBoundingClientRect();
+          if (rect.top < window.innerHeight && rect.bottom > 0) {
+            // Above the fold - reveal with slight natural stagger
+            setTimeout(() => {
+              el.classList.add('is-revealed');
+            }, 60);
+          } else {
+            observer.observe(el);
+          }
+        });
+      }
+
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', initFlowAnimations);
+      } else {
+        initFlowAnimations();
+      }
+    </script>
   </body>
 </html>

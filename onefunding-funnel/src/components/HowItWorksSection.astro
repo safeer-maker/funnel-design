@@ -12,7 +12,7 @@ import { SITE_CONFIG } from '../config/site';
 
   <div class="container relative-content">
     <!-- Clean, Focused Section Header -->
-    <div class="section-header-clean text-center">
+    <div class="section-header-clean text-center" data-flow="up">
       <h2>
         How We Seamlessly Onboard Your Business
       </h2>
@@ -25,8 +25,8 @@ import { SITE_CONFIG } from '../config/site';
     <div class="cross-diagonal-rows">
 
       <!-- Row 1: Image Left, Text Right -->
-      <div class="cross-row" data-animate>
-        <div class="visual-col">
+      <div class="cross-row">
+        <div class="visual-col" data-flow="left" data-flow-delay="1">
           <div class="image-frame tilt-left">
             <img 
               src="/images/merchant_operations.jpg" 
@@ -39,7 +39,7 @@ import { SITE_CONFIG } from '../config/site';
           </div>
         </div>
 
-        <div class="text-col">
+        <div class="text-col" data-flow="right" data-flow-delay="2">
           <span class="phase-label text-indigo">DISCOVERY &amp; AUDIT</span>
           <h3 class="row-title">
             We Review Your Numbers &amp; Uncover Hidden Processor Markups
@@ -47,7 +47,7 @@ import { SITE_CONFIG } from '../config/site';
           <p class="row-desc">
             Provide your estimated monthly volume or share a recent processing statement. A senior payment specialist performs a line-by-line review to show you exact fee markups and where you can eliminate unnecessary charges.
           </p>
-          <div class="key-points">
+          <div class="key-points" data-flow-stagger>
             <div class="point-item">
               <span class="point-check check-indigo">✓</span>
               <span><strong>Itemized Breakdown:</strong> Clear side-by-side comparison with your current setup.</span>
@@ -66,8 +66,8 @@ import { SITE_CONFIG } from '../config/site';
       </div>
 
       <!-- Row 2: Text Left, Image Right -->
-      <div class="cross-row reverse-row" data-animate>
-        <div class="visual-col">
+      <div class="cross-row reverse-row">
+        <div class="visual-col" data-flow="right" data-flow-delay="2">
           <div class="image-frame tilt-right">
             <img 
               src="/images/underwriting_boardroom.jpg" 
@@ -80,7 +80,7 @@ import { SITE_CONFIG } from '../config/site';
           </div>
         </div>
 
-        <div class="text-col">
+        <div class="text-col" data-flow="left" data-flow-delay="1">
           <span class="phase-label text-indigo">TAILORED SETUP &amp; UNDERWRITING</span>
           <h3 class="row-title">
             We Pre-Underwrite Your Account &amp; Pre-Program Your Technology
@@ -88,7 +88,7 @@ import { SITE_CONFIG } from '../config/site';
           <p class="row-desc">
             No cookie-cutter setups. We match your business model with the right setup upfront—whether you need Smart POS terminals for retail, Tap to Pay on your phone, QuickBooks integration, or secure virtual terminals for invoices.
           </p>
-          <div class="key-points">
+          <div class="key-points" data-flow-stagger>
             <div class="point-item">
               <span class="point-check check-indigo">✓</span>
               <span><strong>Program Flexibility:</strong> Choose Dual Pricing to offset processing fees or true Interchange-Plus.</span>
@@ -107,8 +107,8 @@ import { SITE_CONFIG } from '../config/site';
       </div>
 
       <!-- Row 3: Image Left, Text Right -->
-      <div class="cross-row" data-animate>
-        <div class="visual-col">
+      <div class="cross-row">
+        <div class="visual-col" data-flow="left" data-flow-delay="1">
           <div class="image-frame tilt-left">
             <img 
               src="/images/onboarded_image.jpg" 
@@ -121,7 +121,7 @@ import { SITE_CONFIG } from '../config/site';
           </div>
         </div>
 
-        <div class="text-col">
+        <div class="text-col" data-flow="right" data-flow-delay="2">
           <span class="phase-label text-mint">ZERO-DOWNTIME GO LIVE</span>
           <h3 class="row-title">
             Go Live Seamlessly with Guaranteed Zero Payment Disruption
@@ -129,7 +129,7 @@ import { SITE_CONFIG } from '../config/site';
           <p class="row-desc">
             Your existing processor stays active until your new OneFunding account is verified and fully tested. Once ready, you start accepting payments immediately, with direct deposits landing in your business account the next business day.
           </p>
-          <div class="key-points">
+          <div class="key-points" data-flow-stagger>
             <div class="point-item">
               <span class="point-check check-mint">✓</span>
               <span><strong>Zero Interruption:</strong> Your customers never notice a switch; transactions process without a pause.</span>
@@ -145,7 +145,7 @@ import { SITE_CONFIG } from '../config/site';
     </div>
 
     <!-- Simple, Clean CTA -->
-    <div class="simple-onboarding-cta text-center">
+    <div class="simple-onboarding-cta text-center" data-flow="up" data-flow-delay="2">
       <a href={SITE_CONFIG.ctaUrl} target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-lg">
         <span>Get Your Free Statement Review →</span>
       </a>

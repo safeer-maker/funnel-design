@@ -527,3 +527,83 @@ select.form-control {
 .modal-close:hover {
   color: var(--text-heading);
 }
+
+/* ==========================================================================
+   HIGH-PERFORMANCE TEXT & SECTION FLOW ANIMATION SYSTEM
+   Zero-dependency, GPU-accelerated entrance transitions
+   ========================================================================== */
+
+[data-flow] {
+  opacity: 0;
+  will-change: transform, opacity;
+  transition: opacity 0.75s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.75s cubic-bezier(0.16, 1, 0.3, 1),
+              filter 0.75s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Directional Flow Variations */
+[data-flow="up"],
+[data-flow=""] {
+  transform: translateY(28px);
+}
+
+[data-flow="down"] {
+  transform: translateY(-28px);
+}
+
+[data-flow="left"] {
+  transform: translateX(-32px);
+}
+
+[data-flow="right"] {
+  transform: translateX(32px);
+}
+
+[data-flow="fade"] {
+  transform: scale(0.97);
+  filter: blur(4px);
+}
+
+/* Revealed State */
+[data-flow].is-revealed {
+  opacity: 1;
+  transform: translate(0, 0) scale(1);
+  filter: blur(0);
+}
+
+/* Explicit Flow Delays */
+[data-flow-delay="1"] { transition-delay: 0.08s; }
+[data-flow-delay="2"] { transition-delay: 0.16s; }
+[data-flow-delay="3"] { transition-delay: 0.24s; }
+[data-flow-delay="4"] { transition-delay: 0.32s; }
+[data-flow-delay="5"] { transition-delay: 0.40s; }
+[data-flow-delay="6"] { transition-delay: 0.48s; }
+
+/* Flow Stagger Container: automatically staggers direct children */
+[data-flow-stagger] > * {
+  opacity: 0;
+  transform: translateY(20px);
+  will-change: transform, opacity;
+  transition: opacity 0.65s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.65s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+[data-flow-stagger].is-revealed > *:nth-child(1) { transition-delay: 0.05s; opacity: 1; transform: translateY(0); }
+[data-flow-stagger].is-revealed > *:nth-child(2) { transition-delay: 0.12s; opacity: 1; transform: translateY(0); }
+[data-flow-stagger].is-revealed > *:nth-child(3) { transition-delay: 0.19s; opacity: 1; transform: translateY(0); }
+[data-flow-stagger].is-revealed > *:nth-child(4) { transition-delay: 0.26s; opacity: 1; transform: translateY(0); }
+[data-flow-stagger].is-revealed > *:nth-child(5) { transition-delay: 0.33s; opacity: 1; transform: translateY(0); }
+[data-flow-stagger].is-revealed > *:nth-child(6) { transition-delay: 0.40s; opacity: 1; transform: translateY(0); }
+[data-flow-stagger].is-revealed > *:nth-child(n+7) { transition-delay: 0.45s; opacity: 1; transform: translateY(0); }
+
+/* Accessible fallback for reduced motion preference */
+@media (prefers-reduced-motion: reduce) {
+  [data-flow],
+  [data-flow-stagger] > * {
+    opacity: 1 !important;
+    transform: none !important;
+    filter: none !important;
+    transition: none !important;
+  }
+}
+

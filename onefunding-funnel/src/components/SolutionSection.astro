@@ -6,7 +6,7 @@
   <div class="container">
 
     <!-- Section Header -->
-    <div class="section-header-clean">
+    <div class="section-header-clean" data-flow="up">
       <h2>
         Payment Infrastructure Built to Protect Your Cash Flow
       </h2>
@@ -22,11 +22,11 @@
       <div class="solution-points-col">
 
         <!-- Point 01 -->
-        <div class="solution-point point-indigo" data-animate>
+        <div class="solution-point point-indigo" data-flow="left" data-flow-delay="1">
           <div class="solution-header-row">
             <h3 class="solution-title">Interchange-Plus Pricing</h3>
           </div>
-          <ul class="solution-checklist">
+          <ul class="solution-checklist" data-flow-stagger>
             <li>
               <span class="check-icon icon-indigo">✓</span>
               <span>True wholesale network pass-through without hidden markups</span>
@@ -43,11 +43,11 @@
         </div>
 
         <!-- Point 02 -->
-        <div class="solution-point point-indigo" data-animate>
+        <div class="solution-point point-indigo" data-flow="left" data-flow-delay="2">
           <div class="solution-header-row">
             <h3 class="solution-title">Multi-Gateway Failover & Smart Routing</h3>
           </div>
-          <ul class="solution-checklist">
+          <ul class="solution-checklist" data-flow-stagger>
             <li>
               <span class="check-icon icon-mint">✓</span>
               <span>Intelligent load-balancing for peak sales volumes</span>
@@ -64,11 +64,11 @@
         </div>
 
         <!-- Point 03 -->
-        <div class="solution-point point-indigo" data-animate>
+        <div class="solution-point point-indigo" data-flow="left" data-flow-delay="3">
           <div class="solution-header-row">
             <h3 class="solution-title">Upfront Human Underwriting & Defense</h3>
           </div>
-          <ul class="solution-checklist">
+          <ul class="solution-checklist" data-flow-stagger>
             <li>
               <span class="check-icon icon-indigo">✓</span>
               <span>LegitScript & high-growth compliance expertise</span>
@@ -87,7 +87,7 @@
       </div>
 
       <!-- RIGHT: 2:3 Organic Photography -->
-      <div class="solution-visual-col">
+      <div class="solution-visual-col" data-flow="right" data-flow-delay="2">
         <div class="solution-image-sticky">
           <div class="solution-image-frame">
             <img
@@ -133,14 +133,6 @@
     display: flex;
     flex-direction: column;
     gap: 0.9rem;
-    opacity: 0;
-    transform: translateY(18px);
-    transition: opacity 0.55s ease, transform 0.55s ease;
-  }
-
-  .solution-point.is-visible {
-    opacity: 1;
-    transform: translateY(0);
   }
 
   /* Header Row: Color-Coded Number + Title */
@@ -260,33 +252,3 @@
     }
   }
 </style>
-
-<script>
-  function initSolutionAnimations() {
-    const points = document.querySelectorAll('.solution-point');
-    if (!points.length) return;
-
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            const index = Array.from(points).indexOf(entry.target);
-            setTimeout(() => {
-              entry.target.classList.add('is-visible');
-            }, index * 120);
-            observer.unobserve(entry.target);
-          }
-        });
-      },
-      { threshold: 0.15 }
-    );
-
-    points.forEach((p) => observer.observe(p));
-  }
-
-  if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', initSolutionAnimations);
-  } else {
-    initSolutionAnimations();
-  }
-</script>

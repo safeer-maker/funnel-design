@@ -9,20 +9,18 @@ import { SITE_CONFIG } from '../config/site';
       <!-- Left Column: Copy & Conversion Hierarchy -->
       <div class="hero-content">
         <!-- Headline: Human Scale, Punchy & Clear -->
-        <h2 class="hero-title">
+        <h2 class="hero-title" data-flow="up" data-flow-delay="1">
           Stop Funding Stripe's Growth. <br />
           <span class="text-indigo">Keep More of Every Dollar</span> Your Business Earns.
         </h2>
 
         <!-- Subheadline -->
-        <p class="hero-subtitle">
+        <p class="hero-subtitle" data-flow="up" data-flow-delay="2">
           OneFunding gives high-growth businesses <strong>Interchange-Plus wholesale rates</strong>, <strong>next-day cash deposits</strong>, and multi-gateway underwriting that <strong>never gets shut down</strong> — no matter your industry.
         </p>
 
-
-
         <!-- Primary CTA & FUD Reduction -->
-        <div class="hero-cta-block">
+        <div class="hero-cta-block" data-flow="up" data-flow-delay="3">
           <a href={SITE_CONFIG.ctaUrl} target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-lg hero-cta-btn">
             <span>GET MY FREE RATE ANALYSIS →</span>
           </a>
@@ -42,7 +40,7 @@ import { SITE_CONFIG } from '../config/site';
       </div>
 
       <!-- Right Column: Clean Dynamic Focal Image Stack -->
-      <div class="hero-visual">
+      <div class="hero-visual" data-flow="fade" data-flow-delay="2">
         <div class="focal-stage" id="heroFocalStage" aria-label="Interactive Merchant Payment Showcase">
           <!-- Image 1 -->
           <div class="focal-card card-0 is-active" data-index="0">
@@ -68,7 +66,7 @@ import { SITE_CONFIG } from '../config/site';
         </div>
         
         <!-- Social Proof Form 1: Verified Rating -->
-        <div class="hero-social-proof-clean">
+        <div class="hero-social-proof-clean" data-flow="up" data-flow-delay="4">
           <div class="rating-stars" aria-label="5 out of 5 stars">
             ★★★★★
           </div>
